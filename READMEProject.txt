@@ -15,3 +15,4 @@ Cliccare su "Start Import" (in basso a destra). A questo punto si può eseguire i
 
 Nel db ci sono due users:  	ADMIN	(username: 	admin, 	password: admin)
 							USER 	(username: 	user, 	password: user )
+Prova di push
