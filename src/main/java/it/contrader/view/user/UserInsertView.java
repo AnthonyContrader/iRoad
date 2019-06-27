@@ -10,6 +10,8 @@ public class UserInsertView extends AbstractView{
 	private String username;
 	private String password;
 	private String usertype;
+	private int userSpeed ;
+	private int userWeight ;
 	private final String mode = "INSERT";
 
 	public UserInsertView() {
@@ -38,6 +40,14 @@ public class UserInsertView extends AbstractView{
 			password = getInput();
 			System.out.println("Inserisci tipo dell'utente:");
 			usertype = getInput();
+			System.out.println("Inserisci velocità:");
+			userSpeed = Integer.parseInt(getInput());
+			System.out.println("Inserisci peso:");
+			userWeight = Integer.parseInt(getInput());
+			
+			
+			
+			
 	}
 
 	/**
@@ -49,7 +59,11 @@ public class UserInsertView extends AbstractView{
 		request.put("username", username);
 		request.put("password", password);
 		request.put("usertype", usertype);
+		request.put("userSpeed", userSpeed);
+		request.put("userWeight", userWeight);
 		request.put("mode", mode);
+		
+	
 		MainDispatcher.getInstance().callAction("User", "doControl", request);
 	}
 
