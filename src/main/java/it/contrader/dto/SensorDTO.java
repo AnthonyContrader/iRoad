@@ -14,24 +14,24 @@ public class SensorDTO {
 
 	private int idSensor;
 
-	private String Sensor_position; 
+	private String SensorPosition; 
 
-	private String Sensor_type;
+	private String SensorType;
 
 	public SensorDTO() {
 
 	}
 
-	public SensorDTO(String Sensor_position, String Sensor_type) {
-		this.Sensor_position = Sensor_position;
-		this.Sensor_type = Sensor_type;
+	public SensorDTO(String SensorPosition, String SensorType) {
+		this.SensorPosition = SensorPosition;
+		this.SensorType = SensorType;
 
 	}
 
-	public SensorDTO (int idSensor, String Sensor_position, String Sensor_type) {
+	public SensorDTO (int idSensor, String SensorPosition, String SensorType) {
 		this.idSensor = idSensor;
-		this.Sensor_position = Sensor_position;
-		this.Sensor_type = Sensor_type;
+		this.SensorPosition = SensorPosition;
+		this.SensorType = SensorType;
 		
 	}
 
@@ -43,20 +43,20 @@ public class SensorDTO {
 		this.idSensor = idSensor;
 	}
 
-	public String getSensor_position() {
-		return this.Sensor_position;
+	public String getSensorPosition() {
+		return this.SensorPosition;
 	}
 
-	public void setSensor_position(String Sensor_position) {
-		this.Sensor_position = Sensor_position;
+	public void setSensorPosition(String SensorPosition) {
+		this.SensorPosition = SensorPosition;
 	}
 
-	public String getSensor_type() {
-		return this.Sensor_type;
+	public String getSensorType() {
+		return this.SensorType;
 	}
 
-	public void setSensor_type(String Sensor_type) {
-		this.Sensor_type = Sensor_type;
+	public void setSensorType(String SensorType) {
+		this.SensorType = SensorType;
 	}
 
 	
@@ -65,6 +65,6 @@ public class SensorDTO {
 
 	@Override
 	public String toString() {
-		return idSensor + "\t" + Sensor_position + "\t\t" + Sensor_type ;
+		return idSensor + "\t" + SensorPosition + "\t\t" + SensorType ;
 	}
 }
