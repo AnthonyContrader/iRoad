@@ -15,8 +15,7 @@ public class Screen {
 
 	}
 
-	public Screen(int idScreen, String output) {
-		this.idScreen = idScreen;
+	public Screen(String output) {
 		this.output = output;
 	}
 

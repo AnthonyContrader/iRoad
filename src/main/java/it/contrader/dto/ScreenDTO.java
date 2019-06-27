@@ -14,8 +14,7 @@ public class ScreenDTO {
 
 	}
 
-	public ScreenDTO(int idScreen, String output) {
-		this.idScreen = idScreen;
+	public ScreenDTO(String output) {;
 		this.output = output;
 	}
 
