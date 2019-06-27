@@ -47,6 +47,8 @@ public class UserController implements Controller {
 
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)
 		int id;
+		int userSpeed;
+		int userWeight;
 		String username;
 		String password;
 		String usertype;
@@ -66,9 +68,10 @@ public class UserController implements Controller {
 			username = request.get("username").toString();
 			password = request.get("password").toString();
 			usertype = request.get("usertype").toString();
-			
+			userSpeed = Integer.parseInt(request.get("userSpeed").toString());	
+			userWeight = Integer.parseInt(request.get("userWeight").toString());	
 			//costruisce l'oggetto user da inserire
-			UserDTO usertoinsert = new UserDTO(username, password, usertype);
+			UserDTO usertoinsert = new UserDTO(username, password, usertype, userSpeed, userWeight);
 			//invoca il service
 			userService.insert(usertoinsert);
 			request = new Request();
@@ -93,7 +96,9 @@ public class UserController implements Controller {
 			username = request.get("username").toString();
 			password = request.get("password").toString();
 			usertype = request.get("usertype").toString();
-			UserDTO usertoupdate = new UserDTO(username, password, usertype);
+			userSpeed = Integer.parseInt(request.get("userSpeed").toString());
+			userWeight = Integer.parseInt(request.get("userWeight").toString());
+			UserDTO usertoupdate = new UserDTO(username, password, usertype, userSpeed, userWeight);
 			usertoupdate.setId(id);
 			userService.update(usertoupdate);
 			request = new Request();
