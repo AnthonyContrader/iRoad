@@ -28,7 +28,7 @@ public class ScreenDAO implements DAO<Screen> {
 			while (resultSet.next()) {
 				int idScreen = resultSet.getInt("idScreen");
 				String output = resultSet.getString("output");
-				screen = new Screen(idScreen, output);
+				screen = new Screen(output);
 				screensList.add(screen);
 			}
 		} catch (SQLException e) {
