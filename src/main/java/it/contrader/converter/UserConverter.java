@@ -18,7 +18,7 @@ public class UserConverter  implements Converter<User, UserDTO> {
 	 */
 
 	public UserDTO toDTO(User user) {
-		UserDTO userDTO = new UserDTO(user.getId(), user.getUsername(), user.getPassword(), user.getUsertype());
+		UserDTO userDTO = new UserDTO(user.getId(), user.getUsername(), user.getPassword(), user.getUsertype(), user.getUserSpeed(), user.getUserWeight());
 		return userDTO;
 	}
 
@@ -28,7 +28,7 @@ public class UserConverter  implements Converter<User, UserDTO> {
 	 */
 	@Override
 	public User toEntity(UserDTO userDTO) {
-		User user = new User(userDTO.getId(), userDTO.getUsername(), userDTO.getPassword(), userDTO.getUsertype());
+		User user = new User(userDTO.getId(), userDTO.getUsername(), userDTO.getPassword(), userDTO.getUsertype(), userDTO.getUserSpeed(), userDTO.getUserWeight());
 		return user;
 	}
 	
