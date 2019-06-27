@@ -7,9 +7,6 @@ import it.contrader.dto.UserDTO;
 import it.contrader.model.User;
 
 /**
- * 
- * @author Vittorio
- * 
  * Implementando questa l'interfaccia converter la classe UserConverter è OBBLIGATA ad implementarne i metodi
  *
  */
@@ -19,7 +16,7 @@ public class UserConverter  implements Converter<User, UserDTO> {
 	 * Crea un oggetto di tipo UserDTO e lo riempie con i campi del parametro user di tipo User.
 	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
 	 */
-	@Override
+
 	public UserDTO toDTO(User user) {
 		UserDTO userDTO = new UserDTO(user.getId(), user.getUsername(), user.getPassword(), user.getUsertype());
 		return userDTO;

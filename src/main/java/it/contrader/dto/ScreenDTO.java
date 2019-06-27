@@ -1,21 +1,20 @@
-package it.contrader.model;
+package it.contrader.dto;
+public class ScreenDTO {
 
-public class Screen {
+// Qui sotto definisco gli attributi di ScreenView. 
 
-// Qui sotto definisco gli attributi di Screen. 
-	
 	private int idScreen;
 	private String output;
 
 	/*
 	 * Definisco i due costruttori, uno vuoto e uno con i parametri idscreen e output
-	 * per costrire oggetti di tipo Screen
+	 * per costrire oggetti di tipo ScreenView
 	 */
-	public Screen() {
+	public ScreenDTO() {
 
 	}
 
-	public Screen(int idScreen, String output) {
+	public ScreenDTO(int idScreen, String output) {
 		this.idScreen = idScreen;
 		this.output = output;
 	}
@@ -42,4 +41,3 @@ public class Screen {
 	 */
 
 }
-
