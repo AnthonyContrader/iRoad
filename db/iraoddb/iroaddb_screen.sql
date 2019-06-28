@@ -16,26 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `screenview`
+-- Table structure for table `screen`
 --
 
-DROP TABLE IF EXISTS `screenview`;
+DROP TABLE IF EXISTS `screen`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `screenview` (
-  `idScreenView` int(11) NOT NULL AUTO_INCREMENT,
-  PRIMARY KEY (`idScreenView`),
-  UNIQUE KEY `idScreenView_UNIQUE` (`idScreenView`)
+CREATE TABLE `screen` (
+  `idScreen` int(11) NOT NULL AUTO_INCREMENT,
+  `output` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idScreen`),
+  UNIQUE KEY `idScreen_UNIQUE` (`idScreen`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `screenview`
+-- Dumping data for table `screen`
 --
 
-LOCK TABLES `screenview` WRITE;
-/*!40000 ALTER TABLE `screenview` DISABLE KEYS */;
-/*!40000 ALTER TABLE `screenview` ENABLE KEYS */;
+LOCK TABLES `screen` WRITE;
+/*!40000 ALTER TABLE `screen` DISABLE KEYS */;
+/*!40000 ALTER TABLE `screen` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-25 17:22:00
+-- Dump completed on 2019-06-27 15:10:13

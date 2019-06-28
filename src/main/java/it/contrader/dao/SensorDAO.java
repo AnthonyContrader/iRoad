@@ -19,7 +19,7 @@ public class SensorDAO implements DAO<Sensor> {
 	private final String QUERY_READ = "SELECT * FROM sensor WHERE idSensor=?";
 	private final String QUERY_UPDATE = "UPDATE sensor SET SensorPosition=?, SensorType=? WHERE idSensor=?";
 	private final String QUERY_DELETE = "DELETE FROM sensor WHERE idSensor=?";
-
+	
 	public SensorDAO() {
 
 	}
