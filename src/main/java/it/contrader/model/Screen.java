@@ -35,10 +35,27 @@ public class Screen {
 		this.output = output;
 	}
 
-	/*
-	 Definisco i Metodi Get e Set che servono alle altre classi a recuperare e modificare gli
-	 * attributi di Screen
-	 */
+	public String toString() {
+		return  idScreen + "\t" + output ;
+	}
+
+	//Metodo per il confronto degli oggetti
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Screen other = (Screen) obj;
+		if (idScreen != other.idScreen)
+			return false;
+		 else if (output.equals(other.output))
+			return false;
+		
+		return true;
+	}	
 
 }
 

@@ -15,7 +15,7 @@ import it.contrader.model.Sensor;
 public class SensorDAO implements DAO<Sensor> {
 
 	private final String QUERY_ALL = "SELECT * FROM sensor";
-	private final String QUERY_CREATE = "INSERT INTO s (SensorPosition, SensorType) VALUES (?,?)";
+	private final String QUERY_CREATE = "INSERT INTO sensor (SensorPosition, SensorType) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM sensor WHERE idSensor=?";
 	private final String QUERY_UPDATE = "UPDATE sensor SET SensorPosition=?, SensorType=? WHERE idSensor=?";
 	private final String QUERY_DELETE = "DELETE FROM sensor WHERE idSensor=?";

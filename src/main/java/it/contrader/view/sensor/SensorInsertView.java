@@ -49,6 +49,7 @@ public class SensorInsertView extends AbstractView{
 		request.put("idSensor", idSensor);
 		request.put("SensorPosition", SensorPosition);
 		request.put("SensorType", SensorType);
+		request.put("mode",mode);
 		MainDispatcher.getInstance().callAction("Sensor", "doControl", request);
 	}
 
