@@ -1,38 +1,25 @@
 package it.contrader.service;
 
-import java.util.List;
-
+import it.contrader.converter.SensorConverter;
 import it.contrader.dao.SensorDAO;
+import it.contrader.dto.SensorDTO;
 import it.contrader.model.Sensor;
 
+/**
+ * 
+ * @author Antonio
+ *
+ *Grazie all'ereditarietà mi basta specificare i tipi di questa classe per
+ *ereditare i metodi della clase AbstractService. Pertanto la classe risulta meno complicata
+ *da scrivere, facendoci risparmiare tempo e fatica!
+ */
+public class SensorService extends AbstractService<Sensor, SensorDTO> {
+	
+	//Istanzio DAO  e Converter specifici.
+	public SensorService(){
+		this.dao = new SensorDAO();
+		this.converter = new SensorConverter();
+	}
+	
 
-public class SensorService {
-	
-	private SensorDAO sensorDAO;
-	
-	public SensorService() {
-		this.sensorDAO = new SensorDAO();
-	}
-
-	public List<Sensor> getAllSensor() {
-		return this.sensorDAO.getAll();
-	}
-	
-	public boolean insertSensor(Sensor sensor) {
-		return this.sensorDAO.insert(sensor);
-	}
-
-	public Sensor readSensor(int sensorId) {
-		return this.sensorDAO.read(sensorId);
-	}
-	
-	public boolean updateSensor(Sensor sensorToUpdate) {
-		return this.sensorDAO.update(sensorToUpdate);
-	}
-	
-	public boolean deleteSensor(int sensorId) {
-		return this.sensorDAO.delete(sensorId);
-	}
-	
-	
 }
