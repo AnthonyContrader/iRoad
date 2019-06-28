@@ -8,7 +8,7 @@ import it.contrader.view.AbstractView;
 
 /**
  * 
- * @author Vittorio
+ * @author iRoadteam
  *
  *Si osservi che alla View arrivano solo oggetti di tipo DTO!
  */

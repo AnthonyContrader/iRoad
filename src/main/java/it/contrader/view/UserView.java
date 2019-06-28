@@ -8,8 +8,6 @@ import it.contrader.main.MainDispatcher;
 
 
 /**
- * 
- * @author Vittorio
  *
  * Si osservi che alla View arrivano solo oggetti di tipo DTO!
  */
@@ -28,9 +26,9 @@ public class UserView extends AbstractView {
 	@Override
 	public void showResults(Request request) {
 		if (request != null) {
-			System.out.println("\n------------------- Gestione utenti ----------------\n");
-			System.out.println("ID\tUsername\tPassword\tTipo Utente");
-			System.out.println("----------------------------------------------------\n");
+			System.out.println("\n------------------- Gestione utenti --------------------------------------\n");
+			System.out.println("ID\tUsername\tPassword\tTipo Utente\tVelocita\tPeso");
+			System.out.println("----------------------------------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
 			List<UserDTO> users = (List<UserDTO>) request.get("users");
