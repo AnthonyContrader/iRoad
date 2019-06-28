@@ -15,7 +15,7 @@ import it.contrader.service.ScreenService;
 public class ScreenController implements Controller {
 
 	/**
-	 * definisce il pacchetto di vista user.
+	 * definisce il pacchetto di vista screen.
 	 */
 	private static String sub_package = "screen.";
 	
@@ -113,6 +113,9 @@ public class ScreenController implements Controller {
 			case "L":
 				MainDispatcher.getInstance().callView(sub_package + "ScreenRead", null);
 				break;
+			case "I":
+				MainDispatcher.getInstance().callView(sub_package + "ScreenInsert", null);
+				break;	
 				
 			case "M":
 				MainDispatcher.getInstance().callView(sub_package + "ScreenUpdate", null);
