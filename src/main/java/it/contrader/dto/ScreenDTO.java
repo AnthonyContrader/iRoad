@@ -13,8 +13,7 @@ public class ScreenDTO {
 
 
 
-	private int idScreen;
-	
+	private int idScreen;	
 	private String output;
 
 	/*
@@ -25,11 +24,14 @@ public class ScreenDTO {
 
 	}
 
-	public ScreenDTO (String output) {;
+	public ScreenDTO (String output) {
 		this.output = output;
 	}
 
-
+	public ScreenDTO (int idScreen, String output) {
+		this.idScreen = idScreen;
+		this.output = output;
+	}
 	/*
 	 Definisco i Metodi Get e Set che servono alle altre classi a recuperare e modificare gli
 	 * attributi di Screen

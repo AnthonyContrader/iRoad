@@ -18,6 +18,10 @@ public class Screen {
 	public Screen(String output) {
 		this.output = output;
 	}
+	public Screen(int idScreen, String output) {
+		this.idScreen = idScreen;
+		this.output = output;
+	}
     /*
      * inserisco i metodi get e set che verranno usati dalle altre classi per accedere agli attributi
      * privati della classe Screen
