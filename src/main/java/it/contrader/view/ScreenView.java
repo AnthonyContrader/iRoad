@@ -29,7 +29,7 @@ public class ScreenView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione Screens ----------------\n");
-			System.out.println("ID DELLO SCREEN");
+			System.out.println("ID\tMessaggio di Output");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

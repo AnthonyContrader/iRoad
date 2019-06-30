@@ -9,7 +9,7 @@ public class Screen {
 
 	/*
 	 * Definisco i due costruttori, uno vuoto e uno con i parametri idscreen e output
-	 * per costrire oggetti di tipo Screen
+	 * per inizializzare i campi di Screen in uno stato noto
 	 */
 	public Screen() {
 
@@ -18,7 +18,11 @@ public class Screen {
 	public Screen(String output) {
 		this.output = output;
 	}
-
+    /*
+     * inserisco i metodi get e set che verranno usati dalle altre classi per accedere agli attributi
+     * privati della classe Screen
+     */
+	
 	public int getIdScreen() {
 		return idScreen;
 	}
@@ -34,13 +38,13 @@ public class Screen {
 	public void setOutput(String output) {
 		this.output = output;
 	}
-
+//trasformo gli oggetti di Screen in stringa per poter essere visualizzati nella console
 	public String toString() {
-		return  idScreen + "\t" + output ;
+		return  idScreen + "\t" + output;
 	}
 
 	//Metodo per il confronto degli oggetti
-	@Override
+
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -51,11 +55,7 @@ public class Screen {
 		Screen other = (Screen) obj;
 		if (idScreen != other.idScreen)
 			return false;
-		 else if (output.equals(other.output))
-			return false;
-		
 		return true;
 	}	
-
 }
 

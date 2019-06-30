@@ -1,9 +1,20 @@
 package it.contrader.dto;
+
+
+
+
+
+
+
+//Qui sotto definisco gli attributi di ScreenView. 
+
+
 public class ScreenDTO {
 
-// Qui sotto definisco gli attributi di ScreenView. 
+
 
 	private int idScreen;
+	
 	private String output;
 
 	/*
@@ -14,12 +25,17 @@ public class ScreenDTO {
 
 	}
 
-	public ScreenDTO(String output) {;
+	public ScreenDTO (String output) {;
 		this.output = output;
 	}
 
+
+	/*
+	 Definisco i Metodi Get e Set che servono alle altre classi a recuperare e modificare gli
+	 * attributi di Screen
+	 */
 	public int getIdScreen() {
-		return idScreen;
+		return this.idScreen;
 	}
 
 	public void setIdScreen(int idScreen) {
@@ -27,16 +43,16 @@ public class ScreenDTO {
 	}
 
 	public String getOutput() {
-		return output;
+		return this.output;
 	}
 
 	public void setOutput(String output) {
 		this.output = output;
 	}
 
-	/*
-	 Definisco i Metodi Get e Set che servono alle altre classi a recuperare e modificare gli
-	 * attributi di Screen
-	 */
+	//trasformo gli oggetti di Screen in stringa per poter essere visualizzati nella console
+		public String toString() {
+			return  idScreen + "\t" + output;
+		}	
 
 }

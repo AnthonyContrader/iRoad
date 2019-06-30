@@ -29,6 +29,7 @@ public class ScreenDAO implements DAO<Screen> {
 				int idScreen = resultSet.getInt("idScreen");
 				String output = resultSet.getString("output");
 				screen = new Screen(output);
+				screen.setIdScreen(idScreen);
 				screensList.add(screen);
 			}
 		} catch (SQLException e) {
@@ -51,18 +52,18 @@ public class ScreenDAO implements DAO<Screen> {
 
 	}
 
-	public Screen read(int screenId) {
+	public Screen read(int screenIdScreen) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			// Si connette al database per il Read dello Screen
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, screenId);
+			preparedStatement.setInt(1, screenIdScreen);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String output;
 
 			output = resultSet.getString("output");
-			Screen screen = new Screen();
+			Screen screen = new Screen(output);
 			screen.setIdScreen(resultSet.getInt("idScreen"));
 
 			return screen;
