@@ -118,10 +118,10 @@ public class UserDAO implements DAO<User> {
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setString(1, userToUpdate.getUsername());
-				preparedStatement.setString(2, userToUpdate.getPassword());
-				preparedStatement.setString(3, userToUpdate.getUsertype());
-				preparedStatement.setInt(4, userToUpdate.getId());
+				preparedStatement.setInt(1, userToUpdate.getId());
+				preparedStatement.setString(2, userToUpdate.getUsername());
+				preparedStatement.setString(3, userToUpdate.getPassword());
+				preparedStatement.setString(4, userToUpdate.getUsertype());
 				preparedStatement.setInt(5, userToUpdate.getUserSpeed());
 				preparedStatement.setInt(6, userToUpdate.getUserWeight());
 				int a = preparedStatement.executeUpdate();

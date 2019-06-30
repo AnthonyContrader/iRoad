@@ -12,7 +12,7 @@ public class ScreenDAO implements DAO<Screen> {
 	private final String QUERY_CREATE = "INSERT INTO screen (output) VALUES (?)";
 	private final String QUERY_READ = "SELECT * FROM screen WHERE idScreen=?";
 	private final String QUERY_UPDATE = "UPDATE screen SET output=?";
-	private final String QUERY_DELETE = "DELETE FROM screen WHERE output=?";
+	private final String QUERY_DELETE = "DELETE FROM screen WHERE idScreen=?";
 
 	public ScreenDAO() {
 
@@ -52,12 +52,12 @@ public class ScreenDAO implements DAO<Screen> {
 
 	}
 
-	public Screen read(int screenIdScreen) {
+	public Screen read(int screenId) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			// Si connette al database per il Read dello Screen
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, screenIdScreen);
+			preparedStatement.setInt(1, screenId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String output;

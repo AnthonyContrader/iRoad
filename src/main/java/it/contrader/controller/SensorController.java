@@ -6,8 +6,6 @@ import it.contrader.dto.SensorDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.service.SensorService;
 
-import it.contrader.dao.SensorDAO;
-import it.contrader.model.Sensor;
 
 
 
