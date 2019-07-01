@@ -17,7 +17,7 @@ public class ScreenDTO {
 
 	}
 
-	public ScreenDTO(String output) {;
+	public ScreenDTO(String output) {
 		this.output = output;
 	}
 	
@@ -49,7 +49,7 @@ public class ScreenDTO {
 	 */
 	@Override
 	public String toString() {
-		return idScreen + "\t\t" + output ;
+		return idScreen + "\t" + output;
 	}
 
 }

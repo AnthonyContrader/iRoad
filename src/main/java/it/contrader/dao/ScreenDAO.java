@@ -6,18 +6,20 @@ import java.util.List;
 import it.contrader.main.ConnectionSingleton;
 import it.contrader.model.Screen;
 
+//Vengono definiti gli attributi del CRUD
 public class ScreenDAO implements DAO<Screen> {
- //Vengono definiti gli attributi del CRUD
+
 	private final String QUERY_ALL = "SELECT * FROM screen";
 	private final String QUERY_CREATE = "INSERT INTO screen (output) VALUES (?)";
 	private final String QUERY_READ = "SELECT * FROM screen WHERE idScreen=?";
-	private final String QUERY_UPDATE = "UPDATE screen SET output=?";
+	private final String QUERY_UPDATE = "UPDATE screen SET output=? WHERE idScreen=?";
 	private final String QUERY_DELETE = "DELETE FROM screen WHERE idScreen=?";
 
 	public ScreenDAO() {
 
 	}
-     //si connette al database per mostrare la lista degli screen
+
+	// si connette al database per mostrare la lista degli screen
 	public List<Screen> getAll() {
 		List<Screen> screensList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
@@ -52,12 +54,12 @@ public class ScreenDAO implements DAO<Screen> {
 
 	}
 
-	public Screen read(int screenId) {
+	public Screen read(int screenIdScreen) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
-			// Si connette al database per il Read dello Screen
+
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, screenId);
+			preparedStatement.setInt(1, screenIdScreen);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String output;
@@ -90,7 +92,9 @@ public class ScreenDAO implements DAO<Screen> {
 
 				// Si connette al database per l'Update dello screen
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
+
 				preparedStatement.setString(1, screenToUpdate.getOutput());
+				preparedStatement.setInt(2, screenToUpdate.getIdScreen());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

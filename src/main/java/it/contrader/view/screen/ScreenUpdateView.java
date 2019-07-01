@@ -54,7 +54,7 @@ public class ScreenUpdateView extends AbstractView {
 	public void submit() {
 		request = new Request();
 		request.put("idScreen", idScreen);
-		request.put("outpute", output);
+		request.put("output", output);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Screen", "doControl", request);
 	}

@@ -74,13 +74,13 @@ public class ScreenController implements Controller {
 			break;
 			
 		// Arriva qui dalla UserDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
-					case "DELETE":
+			case "DELETE":
 						idScreen = Integer.parseInt(request.get("idScreen").toString());
 						//Qui chiama il service
 						screenService.delete(idScreen);
 						request = new Request();
 						request.put("mode", "mode");
-						MainDispatcher.getInstance().callView(sub_package + "UserDelete", request);
+						MainDispatcher.getInstance().callView(sub_package + "ScreenDelete", request);
 						break;
 		
 		// Arriva qui dalla ScreenUpdateView
@@ -94,6 +94,7 @@ public class ScreenController implements Controller {
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "ScreenUpdate", request);
 			break;
+			
 			
 		//Arriva qui dalla ScreenView Invoca il Service e invia alla ScreenView il risultato da mostrare 
 		case "ScreenLIST":
@@ -119,6 +120,9 @@ public class ScreenController implements Controller {
 				
 			case "M":
 				MainDispatcher.getInstance().callView(sub_package + "ScreenUpdate", null);
+				break;
+			case "C":
+				MainDispatcher.getInstance().callView(sub_package + "ScreenDelete", null);
 				break;
 				
 			case "E":

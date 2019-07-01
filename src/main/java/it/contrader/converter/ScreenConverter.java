@@ -14,7 +14,7 @@ public class ScreenConverter  implements Converter<Screen, ScreenDTO> {
 	 * Crea un oggetto di tipo ScreenDTO e lo riempie con i campi del parametro screen di tipo Screen.
 	 */
 	public ScreenDTO toDTO(Screen screen) {
-		ScreenDTO screenDTO = new ScreenDTO( screen.getIdScreen(), screen.getOutput());
+		ScreenDTO screenDTO = new ScreenDTO(screen.getIdScreen(), screen.getOutput());
 		return screenDTO;
 	}
 
@@ -22,7 +22,7 @@ public class ScreenConverter  implements Converter<Screen, ScreenDTO> {
 	 * Crea un oggetto di tipo User e lo riempie con i campi del parametro user di tipo ScreenDTO.
 	 * Notare l'uso del metodo get() per ottenere il valore dell'attributo-
 	 */
-
+	@Override
 	public Screen toEntity(ScreenDTO screenDTO) {
 		Screen screen = new Screen( screenDTO.getIdScreen(), screenDTO.getOutput());
 		return screen;
@@ -31,7 +31,7 @@ public class ScreenConverter  implements Converter<Screen, ScreenDTO> {
 	/**
 	 * Metodo per convertire le liste di Screen.
 	 */
-
+	@Override
 	public List<ScreenDTO> toDTOList(List<Screen> screenList) {
 		//Crea una lista vuota.
 		List<ScreenDTO> screenDTOList = new ArrayList<ScreenDTO>();
