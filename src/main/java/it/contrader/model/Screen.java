@@ -57,8 +57,9 @@ public class Screen {
 		if (getClass() != obj.getClass())
 			return false;
 		Screen other = (Screen) obj;
-		if (idScreen != other.idScreen)
+		if (this.idScreen != other.idScreen)
 			return false;
+		if (!this.getOutput().equals(other.getOutput())) return false;
 		return true;
 	}	
 }

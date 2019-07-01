@@ -77,19 +77,20 @@ public class ScreenDAO implements DAO<Screen> {
 
 	public boolean update(Screen screenToUpdate) {
 		Connection connection = ConnectionSingleton.getInstance();
-
+		System.out.println("valore da inserire"+screenToUpdate.getOutput());
 		// controlla se è presente un id
 		if (screenToUpdate.getIdScreen() == 0)
 			return false;
 
 		Screen screenRead = read(screenToUpdate.getIdScreen());
+		
 		if (!screenRead.equals(screenToUpdate)) {
 			try {
 				// riempie l'oggetto ScreenToUpdate
 				if (screenToUpdate.getOutput() == null || screenToUpdate.getOutput().equals("")) {
 					screenToUpdate.setOutput(screenRead.getOutput());
 				}
-
+				System.out.println("ZZXXXXXXXXXe"+screenToUpdate.getOutput());
 				// Si connette al database per l'Update dello screen
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 
