@@ -46,7 +46,7 @@ public class Screen {
 	public String toString() {
 		return  idScreen + "\t" + output;
 	}
-
+	
 	//Metodo per il confronto degli oggetti
 
 	public boolean equals(Object obj) {
