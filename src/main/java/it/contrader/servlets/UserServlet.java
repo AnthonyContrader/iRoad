@@ -61,7 +61,9 @@ public class UserServlet extends HttpServlet {
 			String username = request.getParameter("username").toString();
 			String password = request.getParameter("password").toString();
 			String usertype = request.getParameter("usertype").toString();
-			dto = new UserDTO (username,password,usertype);
+			int    userSpeed = Integer.parseInt(request.getParameter("userSpeed"));
+			int    userWeight = Integer.parseInt(request.getParameter("userWeight"));
+			dto = new UserDTO (username,password,usertype,userSpeed,userWeight);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -72,8 +74,11 @@ public class UserServlet extends HttpServlet {
 			username = request.getParameter("username");
 			password = request.getParameter("password");
 			usertype = request.getParameter("usertype");
+			userSpeed = Integer.parseInt(request.getParameter("userSpeed"));
+			userWeight = Integer.parseInt(request.getParameter("userWeight"));
+			
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = new UserDTO (id,username, password, usertype);
+			dto = new UserDTO (id,username, password, usertype, userSpeed, userWeight);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/user/usermanager.jsp").forward(request, response);
