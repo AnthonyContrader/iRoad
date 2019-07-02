@@ -17,12 +17,6 @@ public class LoginServlet extends HttpServlet {
 	// UID della servlet
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @param HttpServletRequest request
-	 * @param HttpServletResponse response
-	 * 
-	 * Metodo che gestisce le request che arrivano dalla JSP.
-	 */
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		final HttpSession session = request.getSession();
 		session.setAttribute("utente", null);
