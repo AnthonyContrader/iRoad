@@ -1,10 +1,9 @@
 package it.contrader.dao;
 
 import java.sql.*;
-
 import java.util.ArrayList;
 import java.util.List;
-import it.contrader.utils.ConnectionSingleton;
+import it.contrader.main.ConnectionSingleton;
 import it.contrader.model.User;
 
 /**
@@ -16,9 +15,9 @@ import it.contrader.model.User;
 public class UserDAO implements DAO<User> {
 
 	private final String QUERY_ALL = "SELECT * FROM user";
-	private final String QUERY_CREATE = "INSERT INTO user (username, password, usertype) VALUES (?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO user (username, password, usertype, userSpeed, userWeight) VALUES (?,?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM user WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE user SET username=?, password=?, usertype=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE user SET username=?, password=?, usertype=?, userSpeed=?, userWeight=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM user WHERE id=?";
 
 	public UserDAO() {
@@ -37,7 +36,10 @@ public class UserDAO implements DAO<User> {
 				String username = resultSet.getString("username");
 				String password = resultSet.getString("password");
 				String usertype = resultSet.getString("usertype");
-				user = new User(username, password, usertype);
+				int userSpeed = resultSet.getInt("userSpeed");
+				int userWeight = resultSet.getInt("userWeight");
+				
+				user = new User(username, password, usertype, userSpeed, userWeight);
 				user.setId(id);
 				usersList.add(user);
 			}
@@ -54,6 +56,8 @@ public class UserDAO implements DAO<User> {
 			preparedStatement.setString(1, userToInsert.getUsername());
 			preparedStatement.setString(2, userToInsert.getPassword());
 			preparedStatement.setString(3, userToInsert.getUsertype());
+			preparedStatement.setInt(4, userToInsert.getUserSpeed());
+			preparedStatement.setInt(5, userToInsert.getUserWeight());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -72,11 +76,14 @@ public class UserDAO implements DAO<User> {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String username, password, usertype;
+			int userSpeed, userWeight;
 
 			username = resultSet.getString("username");
 			password = resultSet.getString("password");
 			usertype = resultSet.getString("usertype");
-			User user = new User(username, password, usertype);
+			userSpeed = resultSet.getInt("userSpeed");
+			userWeight = resultSet.getInt("userWeight");
+			User user = new User(username, password, usertype, userSpeed, userWeight);
 			user.setId(resultSet.getInt("id"));
 
 			return user;
@@ -111,10 +118,13 @@ public class UserDAO implements DAO<User> {
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
+				
 				preparedStatement.setString(1, userToUpdate.getUsername());
 				preparedStatement.setString(2, userToUpdate.getPassword());
 				preparedStatement.setString(3, userToUpdate.getUsertype());
-				preparedStatement.setInt(4, userToUpdate.getId());
+				preparedStatement.setInt(4, userToUpdate.getUserSpeed());
+				preparedStatement.setInt(5, userToUpdate.getUserWeight());
+				preparedStatement.setInt(6, userToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
 					return true;

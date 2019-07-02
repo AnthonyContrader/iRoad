@@ -18,23 +18,31 @@ public class UserDTO {
 	private String password;
 	
 	private String usertype;
+	
+	private int userSpeed;
+	
+	private int userWeight;
 
 	
 	public UserDTO() {
 		
 	}
 
-	public UserDTO (String username, String password, String usertype) {
+	public UserDTO (String username, String password, String usertype, int userSpeed, int userWeight) {
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
+		this.userSpeed = userSpeed;
+		this.userWeight = userWeight;
 	}
 
-	public UserDTO (int id, String username, String password, String usertype) {
+	public UserDTO (int id, String username, String password, String usertype,  int userSpeed, int userWeight) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
+		this.userSpeed = userSpeed;
+		this.userWeight = userWeight;
 	}
 
 	public int getId() {
@@ -43,6 +51,16 @@ public class UserDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
+	
+	public String getUsername() {
+		return this.username;
+	}
+	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	
 
 	public String getUsertype() {
 		return this.usertype;
@@ -61,16 +79,23 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	
+	public int getUserSpeed() {
+		return this.userSpeed;
 	}
-
-	public String getUsername() {
-		return username;
+	public void setUserSpeed(int userSpeed) {
+		this.userSpeed = userSpeed;
+	}
+	
+	public int getUserWeight() {
+		return this.userWeight;
+	}
+	public void setUserWeight(int userWeight) {
+		this.userWeight = userWeight;
 	}
 
 	@Override
 	public String toString() {
-		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype;
+		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype + "\t\t" + userSpeed + "\t\t" + userWeight;
 	}
 }
