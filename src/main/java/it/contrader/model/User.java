@@ -15,9 +15,7 @@ public class User {
 	
 	private String usertype;
 	
-	private int userSpeed;
 	
-	private int userWeight;
 	
 	
 
@@ -28,21 +26,19 @@ public class User {
 		
 	}
 
-	public User (String username, String password, String usertype, int userSpeed, int userWeight) {
+	public User (String username, String password, String usertype) {
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
-		this.userSpeed = userSpeed;
-		this.userWeight = userWeight;
+		
 	}
 
-	public User (int id, String username, String password, String usertype, int userSpeed, int userWeight) {
+	public User (int id, String username, String password, String usertype) {
 		this.id = id;
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
-		this.userSpeed = userSpeed;
-		this.userWeight = userWeight;
+		
 	}
 
 	/**
@@ -80,24 +76,12 @@ public class User {
 		return username;
 	}
 	
-	public int getUserSpeed() {
-		return this.userSpeed;
-	}
-	public void setUserSpeed(int userSpeed) {
-		this.userSpeed = userSpeed;
-	}
 	
-	public int getUserWeight() {
-		return this.userWeight;
-	}
-	public void setUserWeight(int userWeight) {
-		this.userWeight = userWeight;
-	}
 
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype + "\t\t" + userSpeed + "\t\t" + userWeight;
+		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype ;
 	}
 
 	//Metodo per il confronto degli oggetti
