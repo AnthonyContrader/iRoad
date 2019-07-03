@@ -22,6 +22,6 @@ public class LoginService {
 	 * @return 
 	 */
 	public UserDTO login(String username, String password ) {
-		return converter.toDTO( dao.login(username, password) );
+		return converter.toDTO(dao.login(username, password) );
 	}
 }

@@ -20,7 +20,8 @@
 </div>
 <div class="main">
 	<%
-	List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
+	List<UserDTO> list = (List<UserDTO>)request.getAttribute("list");
+
 	%>
 
 <br>

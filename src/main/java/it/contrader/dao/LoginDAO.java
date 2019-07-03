@@ -17,7 +17,7 @@ import it.contrader.model.User;
  */
 public class LoginDAO {
 
-	private final String QUERY_LOGIN = "select * from users where username = ? and password = ?";
+	private final String QUERY_LOGIN = "select * from user where username = ? and password = ?";
 	
 	public User login (String username, String password) {
 		System.out.println();
