@@ -40,7 +40,7 @@ public class SensorServlet extends HttpServlet {
 
 		case "SENSORLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/sensor/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
 			break;
 
 		case "READ":
@@ -49,7 +49,7 @@ public class SensorServlet extends HttpServlet {
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/sensor/readuser.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/sensor/readsensor.jsp").forward(request, response);
 				
 			}
 			
@@ -74,7 +74,7 @@ public class SensorServlet extends HttpServlet {
 			dto = new SensorDTO (idSensor, SensorPosition, SensorType);
 			ans = service.update(dto);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/sensor/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
 			break;
 
 		case "DELETE":
