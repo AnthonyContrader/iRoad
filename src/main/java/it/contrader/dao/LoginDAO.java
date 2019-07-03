@@ -11,14 +11,13 @@ import it.contrader.model.User;
 
 /**
  * 
- * @author Vittorio
+ * @author 
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */
 public class LoginDAO {
 
-	private final String QUERY_LOGIN = "SELECT * FROM user WHERE username = ? AND password = ?";
-
+	private final String QUERY_LOGIN = "select * from users where username = ? and password = ?";
 	
 	public User login (String username, String password) {
 		System.out.println();

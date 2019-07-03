@@ -18,8 +18,6 @@ public class UserDTO {
 	private String password;
 	
 	private String usertype;
-	
-	
 
 	
 	public UserDTO() {
@@ -37,7 +35,6 @@ public class UserDTO {
 		this.username = username;
 		this.password = password;
 		this.usertype = usertype;
-	
 	}
 
 	public int getId() {
@@ -46,16 +43,6 @@ public class UserDTO {
 	public void setId(int id) {
 		this.id = id;
 	}
-	
-	public String getUsername() {
-		return this.username;
-	}
-	
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	
 
 	public String getUsertype() {
 		return this.usertype;
@@ -74,12 +61,16 @@ public class UserDTO {
 		this.password = password;
 	}
 
-	
-	
-	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getUsername() {
+		return username;
+	}
 
 	@Override
 	public String toString() {
-		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype ;
+		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype;
 	}
 }

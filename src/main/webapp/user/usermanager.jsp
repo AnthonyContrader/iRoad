@@ -12,13 +12,15 @@
 <%@ include file="../css/header.jsp" %>
 
 <div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
+   <a class="active" href="homeadmin.jsp">Home</a>
+  <a href="UserServlet?mode=userlist">Users</a>
+   <a href="SensorServlet?mode=sensorlist">Sensors</a>
+    <a href="SreetServlet?mode=userlist">Streets</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">
 	<%
-		List<UserDTO> list = (List<UserDTO>) request.getAttribute("list");
+	   List<UserDTO> list = (List<UserDTO>) request.getAttribute(list);
 	%>
 
 <br>
