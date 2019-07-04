@@ -7,7 +7,12 @@
 </head>
 <body>
 
+
+
+<div class="main" >
+
 		<form class="login" action="LoginServlet" method="post">
+		
 
 				<label for="user">Username: </label>
 			
@@ -20,6 +25,6 @@
 			<button type="submit" value="Login" name="pulsante">Login</button>
 		</form>
 
-	
+</div>	
 </body>
 </html>
