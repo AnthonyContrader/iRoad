@@ -8,7 +8,10 @@
 </head>
 <body>
 
-<div class="header">SAMPLE Project
+<div class="header">
+
+<img src="http://zellwax.com/wp-content/uploads/2016/07/road-marking.png" width="120" height="120" />
+iRoad Project
 </div>
 
 

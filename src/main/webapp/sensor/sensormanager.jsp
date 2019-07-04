@@ -26,9 +26,10 @@
 
 	<table>
 		<tr>
-			<th>idSensor</th>
+		    <th>SensorType</th>
+			
 			<th>SensorPosition</th>
-			<th>SensorType</th>
+		     <th>idSensor</th>
 			<th></th>
 			<th></th>
 		</tr>
@@ -36,14 +37,16 @@
 			for (SensorDTO s : list) {
 		%>
 		<tr>
-			<td><a href=SensorServlet?mode=read&id=<%=s.getIdSensor()%>>
-					<%=s.getSensorPosition()%>
+			<td><a href=SensorServlet?mode=read&idSensor=<%=s.getIdSensor()%>>
+					<%=s.getSensorType()%>
 			</a></td>
-			<td><%=s.getSensorType()%></td>
+			<td><%=s.getSensorPosition()%></td>
+			<td><%=s.getIdSensor()%></td>
 			
-			<td><a href=SensorServlet?mode=read&update=true&id=<%=s.getIdSensor()%>>Edit</a>
+			
+			<td><a href=SensorServlet?mode=read&update=true&idSensor=<%=s.getIdSensor()%>>Edit</a>
 			</td>
-			<td><a href=SensorServlet?mode=delete&id=<%=s.getIdSensor()%>>Delete</a>
+			<td><a href=SensorServlet?mode=delete&idSensor=<%=s.getIdSensor()%>>Delete</a>
 			</td>
 
 		</tr>

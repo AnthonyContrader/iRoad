@@ -12,11 +12,12 @@ div.text{
 }
 
 .header {
-	text-align: center;
-	font-size: 800%;
+	text-align: left;
+	font-size: 200px;
 	font-family: sans-serif;
-	color: #00a990;
+	color: #1666a0;
 }
+
 
 .main {
 	margin-right: 5%;
@@ -30,7 +31,7 @@ div.text{
 .footer {
 	text-align: center;
 	font-size: 70%;
-	background-color: #00a990;
+	background-color: #1666a0;
 	color: #ffffff;
 	width: 100%;
 	border-radius: 7px;
@@ -43,11 +44,11 @@ div.text{
 
 /* headers */
 h1 {
-	position: center;
-	text-align: center;
+	position: left;
+	text-align: left;
 	size: 300%;
 	font-family: sans-serif;
-	color: #000000;
+	color: #1666a0;
 }
 
 h2 {
@@ -138,7 +139,7 @@ tr:nth-child(even) {
 }
 
 th {
-	background-color: #00a990;
+	background-color: #1666a0;
 	color: #ffffff;
 	
 }
@@ -159,7 +160,7 @@ select {
   margin: 8px 0;
 }
 select:hover {
-  background-color:  #00ccad;
+  background-color:  #ffb062;
 }
 
 option{
@@ -190,7 +191,7 @@ input {
 }
 
 input:hover {
-  background-color:  #00ccad;
+  background-color:  #ffb062;
 }
 
 
@@ -198,7 +199,7 @@ res {
 	float: left;
 	width: 25%;
 	margin-top: 3%;
-	background-color: #00a990;
+	background-color: #1666a0;
 	border-radius: 7px;
 	color: #ffffff;
 	text-align:center;
@@ -222,6 +223,12 @@ form {
   width: 75%;
   margin-top: 6px;
 }
+.col-70 {
+  float: right;
+  width: 40%;
+  margin-top: 6px;
+  margin-right: 20px;
+}
 
 /* Clear floats after the columns */
 .row:after {
@@ -239,7 +246,7 @@ label {
 button {
   -webkit-transition-duration: 0.1s; /* Safari */
   transition-duration: 0.1s;
-  background-color:  #00a990;
+  background-color:  #1666a0;
   border: none;
   color: white;
   padding: 3% 3%;
@@ -257,7 +264,7 @@ button {
 }
 
 button:hover {
-  background-color:  #00ccad; 
+  background-color:  #ff8000; 
   color: white;
 }
 
@@ -284,7 +291,7 @@ button:hover {
 
 /*Navigation bar*/
 div.navbar {
-	background: #00a990;
+	background: #1666a0;
 	overflow: hidden;
 	position: sticky;
 	width: 100%;
@@ -304,16 +311,16 @@ div.navbar a {
 	text-decoration: none;
 	font-size: 17px;
 	border-radius: 7px;
-	background: #00a990;
+	background: #1666a0;
 }
 
 div.navbar a:hover {
-	background: #00ccad;
+	background: #ff8000;
 	color: #ffffff;
 }
 
 div.navbar a.active {
-	background: #00ccad;
+	background: #ff8000;
 	color: #ffffff;
 }
 
