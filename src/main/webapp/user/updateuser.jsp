@@ -5,7 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit User</title>
+<title>Edit Sensor</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -49,7 +49,7 @@
 			</select>
     	</div>
   </div>
-      <button type="submit" >Edit</button>
+      <button type="submit" >Done</button>
 </form>
 
 	

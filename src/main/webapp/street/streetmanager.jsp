@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.List"
-	import="it.contrader.dto.SensorDTO"%>
+	import="it.contrader.dto.StreetDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Sensor Manager</title>
+<title>Street Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -14,41 +14,41 @@
 <div class="navbar">
   <a  href="homeadmin.jsp">Home</a>
   <a  href="UserServlet?mode=userlist">Users</a>
-  <a class="active" href="SensorServlet?mode=sensorlist">Sensors</a>
-   <a href="StreetServlet?mode=streetlist">Streets</a>
+  <a  href="SensorServlet?mode=sensorlist">Sensors</a>
+   <a class="active" href="StreetServlet?mode=streetlist">Streets</a>
     <a href="VehicleServlet?mode=vehiclelist">Vehicles</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">
 	<%
-		List<SensorDTO> list = (List<SensorDTO>) request.getAttribute("list");
+		List<StreetDTO> list = (List<StreetDTO>) request.getAttribute("list");
 	%>
 
 <br>
 
 	<table>
 		<tr>
-		    <th>SensorType</th>
+		    <th>StreetType</th>
 			
-			<th>SensorPosition</th>
-		     <th>idSensor</th>
+			<th>StreetName</th>
+		     <th>ID </th>
 			<th></th>
 			<th></th>
 		</tr>
 		<%
-			for (SensorDTO s : list) {
+			for (StreetDTO s : list) {
 		%>
 		<tr>
-			<td><a href=SensorServlet?mode=read&idSensor=<%=s.getIdSensor()%>>
-					<%=s.getSensorType()%>
+			<td><a href=StreetServlet?mode=read&idStreet=<%=s.getIdstreet()%>>
+					<%=s.getStreettype()%>
 			</a></td>
-			<td><%=s.getSensorPosition()%></td>
-			<td><%=s.getIdSensor()%></td>
+			<td><%=s.getStreetname()%></td>
+			<td><%=s.getIdstreet()%></td>
 			
 			
-			<td><a href=SensorServlet?mode=read&update=true&idSensor=<%=s.getIdSensor()%>>Edit</a>
+			<td><a href=StreetServlet?mode=read&update=true&idStreet=<%=s.getIdstreet()%>>Edit</a>
 			</td>
-			<td><a href=SensorServlet?mode=delete&idSensor=<%=s.getIdSensor()%>>Delete</a>
+			<td><a href=StreetServlet?mode=delete&idStreet=<%=s.getIdstreet()%>>Delete</a>
 			</td>
 
 		</tr>
@@ -59,21 +59,21 @@
 
 
 
-<form id="floatright" action="SensorServlet?mode=insert" method="post">
+<form id="floatright" action="StreetServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="sensor">SensorPosition</label>
+      <label for="sensor">StreetName</label>
     </div>
     <div class="col-75">
-      <input type="text" id="sensor" name="sensorPosition" placeholder="inserisci la posizione del sensore">
+      <input type="text" id="sensor" name="StreetName" placeholder="inserisci il Nome della strada">
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="type">SensorType</label>
+     <label for="type">StreetType</label>
     </div>
     <div class="col-75">
- 			<select id="type" name="sensorType">
+ 			<select id="type" name="StreetType">
   				<option value="autovelox">Autovelox</option>
   				<option value="anemometro">Anemometro</option>
   				<option value="dinamometro">Dinamometro</option>

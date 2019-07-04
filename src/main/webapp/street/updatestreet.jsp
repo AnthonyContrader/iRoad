@@ -11,9 +11,10 @@
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
   <a  href="homeadmin.jsp">Home</a>
-  
-   <a class="active" href="SensorServlet?mode=sensorlist">Sensors</a>
-   <a href="LogoutServlet" id="logout">Logout</a>
+  <a class="active" href="UserServlet?mode=userlist">Users</a>
+   <a href="SensorServlet?mode=sensorlist">Sensors</a>
+    <a href="SreetServlet?mode=userlist">Streets</a>
+    <a href="VehicleServlet?mode=vehiclelist">Vehicle</a>
 </div>
 <br>
 <div class="main">
@@ -27,7 +28,7 @@
       <label for="sensor">SensorPosition</label>
     </div>
     <div class="col-75">
-      <input type="text" id="sensor" name="sensorPosition" value=<%=s.getSensorPosition()%>>
+      <input type="text" id="sensor" name="SensorPosition" value=<%=s.getSensorPosition()%>>
     </div>
   </div>
   <div class="row">
@@ -35,16 +36,16 @@
      <label for="type">SensorType</label>
     </div>
     <div class="col-75">
-      <select id="type" name="sensorType">
-  				<option value="Autovelox" <%if(s.getSensorType().equals("Autovelox")) {%>selected<%}%> >Autovelox</option>
-  				<option value="Anemometro" <%if(s.getSensorType().equals("Anemometro")) {%>selected<%}%> >Anemometro</option>
-  				<option value="Dinamometro" <%if(s.getSensorType().equals("Dinamometro")) {%>selected<%}%>>Dinamometro</option>
+      <select id="type" name="sensortype">
+  				<option value="autovelox">Autovelox</option>
+  				<option value="anemometro">Anemometro</option>
+  				<option value="dinamometro">Dinamometro</option>
  
 			</select> 
     </div>
   </div>
  
-      <button type="submit" >Done</button>
+      <button type="submit" >Edit</button>
 </form>
 
 	

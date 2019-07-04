@@ -34,7 +34,7 @@ public class SensorServlet extends HttpServlet {
 		String mode = request.getParameter("mode");
 		SensorDTO dto;
 		int idSensor;
-		boolean ans;
+		boolean ant;
 
 		switch (mode.toUpperCase()) {
 
@@ -58,11 +58,12 @@ public class SensorServlet extends HttpServlet {
 			break;
 
 		case "INSERT":
-			String SensorPosition = request.getParameter("SensorPosition").toString();
-			String SensorType = request.getParameter("SensorType").toString();
+			String SensorType = request.getParameter("sensorType").toString();
+			String SensorPosition = request.getParameter("sensorPosition").toString();
+			
 			dto = new SensorDTO (SensorPosition,SensorType);
-			ans = service.insert(dto);
-			request.setAttribute("ans", ans);
+			ant = service.insert(dto);
+			request.setAttribute("ant", ant);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
 			break;
@@ -72,15 +73,15 @@ public class SensorServlet extends HttpServlet {
 			SensorType = request.getParameter("SensorType");
 			idSensor = Integer.parseInt(request.getParameter("idSensor"));
 			dto = new SensorDTO (idSensor, SensorPosition, SensorType);
-			ans = service.update(dto);
+			ant = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
 			break;
 
 		case "DELETE":
 			idSensor = Integer.parseInt(request.getParameter("idSensor"));
-			ans = service.delete(idSensor);
-			request.setAttribute("ans", ans);
+			ant = service.delete(idSensor);
+			request.setAttribute("ant", ant);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
 			break;

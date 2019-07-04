@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>iRaod Home | Admin</title>
+<title>iRoad Home | Admin</title>
 <link href="css/vittoriostyle.css" rel="stylesheet">
 </head>
 <body>
@@ -16,7 +16,7 @@
   <a class="active" href="homeadmin.jsp">Home</a>
   <a href="UserServlet?mode=userlist">Users</a>
    <a href="SensorServlet?mode=sensorlist">Sensors</a>
-    <a href="SreetServlet?mode=streetlist">Streets</a>
+    <a href="StreetServlet?mode=streetlist">Streets</a>
     <a href="VehicleServlet?mode=vehiclelist">Vehicle</a>
     
   
