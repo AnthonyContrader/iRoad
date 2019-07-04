@@ -35,7 +35,7 @@ public class ScreenServlet extends HttpServlet {
 
 		switch (mode.toUpperCase()) {
 
-		case "USERLIST":
+		case "SCREENLIST":
 			updateList(request);
 			getServletContext().getRequestDispatcher("/screen/screenmanager.jsp").forward(request, response);
 			break;
