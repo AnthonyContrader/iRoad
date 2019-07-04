@@ -259,7 +259,7 @@ button {
   margin-top: 5%;
   margin-bottom: 5%;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 40px;
   width:80%;
 }
 
@@ -298,7 +298,7 @@ div.navbar {
 	top: 0;
 	padding: 1px;
 	z-index: 2;
-	border-radius: 7px;
+	border-radius: 40px;
 	position: -webkit-sticky; /* Safari */
 }
 
@@ -310,7 +310,7 @@ div.navbar a {
 	padding: 1% 2%;
 	text-decoration: none;
 	font-size: 17px;
-	border-radius: 7px;
+	border-radius: 40px;
 	background: #1666a0;
 }
 
