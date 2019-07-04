@@ -60,7 +60,7 @@ public class ScreenServlet extends HttpServlet {
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/user/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/screen/screenmanager.jsp").forward(request, response);
 			break;
 			
 		case "UPDATE":

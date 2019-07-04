@@ -19,16 +19,16 @@
 <br>
 <div class="main">
 
-<%SensorDTO s = (SensorDTO) request.getAttribute("dto");%>
+<%ScreenDTO sc = (ScreenDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="SensorServlet?mode=update&idSensor=<%=s.getIdSensor()%>" method="post">
+<form id="floatleft" action="SensorServlet?mode=update&idSensor=<%=sc.getIdScreen()%>" method="post">
   <div class="row">
     <div class="col-25">
       <label for="sensor">SensorPosition</label>
     </div>
     <div class="col-75">
-      <input type="text" id="sensor" name="SensorPosition" value=<%=s.getSensorPosition()%>>
+      <input type="text" id="sensor" name="output" value=<%=sc.getOutput()%>>
     </div>
   </div>
   <div class="row">

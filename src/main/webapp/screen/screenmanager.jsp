@@ -22,7 +22,7 @@
 </div>
 <div class="main">
 	<%
-		List<ScreenDTO> list = (List<ScreenDTO>) request.getAttribute("list");
+		List<ScreenDTO> list = (List<ScreenDTO>)request.getAttribute("list");
 	%>
 
 <br>
@@ -35,18 +35,18 @@
 			<th></th>
 		</tr>
 		<%
-			for (ScreenDTO s : list) {
+			for (ScreenDTO sc : list) {
 		%>
 		<tr>
-			<td><a href=ScreenServlet?mode=read&idStreet=<%=s.getIdScreen()%>>
-					<%=s.getOutput()%>
+			<td><a href=ScreenServlet?mode=read&idScreen=<%=sc.getIdScreen()%>>
+					<%=sc.getOutput()%>
 			</a></td>
-			<td><%=s.getIdScreen()%></td>
+			<td><%=sc.getIdScreen()%></td>
 			
 			
-			<td><a href=ScreenServlet?mode=read&update=true&idScreen=<%=s.getIdScreen()%>>Edit</a>
+			<td><a href=ScreenServlet?mode=read&update=true&idScreen=<%=sc.getIdScreen()%>><img width="20px" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Files-Edit-File-icon.png"></a>
 			</td>
-			<td><a href=ScreenServlet?mode=delete&idScreen=<%=s.getIdScreen()%>>Delete</a>
+			<td><a href=ScreenServlet?mode=delete&idScreen=<%=sc.getIdScreen()%>><img width="20px" src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"></a>
 			</td>
 
 		</tr>
@@ -60,22 +60,22 @@
 <form id="floatright" action="ScreenServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="screen">ScreenName</label>
+      <label for="screen">output</label>
     </div>
     <div class="col-75">
-      <input type="text" id="screen" name="output" placeholder="inserisci l'output da visualizzare">
+     <select id="type" name="output">
+  				<option value="Attento Incidente">Attento Incidente</option>
+  				<option value="Attento Vento Forte">Attento Vento Forte</option>
+  				<option value="Attento un Veicolo non sta rispettando il semaforo">Attento un Veicolo non sta rispettando il semaforo</option>
+ 
+			</select>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
     </div>
     <div class="col-75">
- 			<select id="type" name="output">
-  				<option value="Attento Incidente">Attento Incidente</option>
-  				<option value="Attento Vento Forte">Attento Vento Forte</option>
-  				<option value="Attento un Veicolo non sta rispettando il semaforo">Attento un Veicolo non sta rispettando il semaforo</option>
- 
-			</select>
+ 			
     	</div>
   </div>
   
