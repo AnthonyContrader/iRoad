@@ -13,7 +13,7 @@ public class StreetConverter  implements Converter<Street, StreetDTO> {
 	 * Crea un oggetto di tipo StreetDTO e lo riempie con i campi del parametro screen di tipo Screen.
 	 */
 	public StreetDTO toDTO(Street street) {
-		StreetDTO streetDTO = new StreetDTO(street.getIdstreet(), street.getSreetname(), street.getSreettype());
+		StreetDTO streetDTO = new StreetDTO(street.getIdstreet(), street.getStreetname(), street.getStreettype());
 		return streetDTO;
 	}
 
@@ -23,7 +23,7 @@ public class StreetConverter  implements Converter<Street, StreetDTO> {
 	 */
 	@Override
 	public Street toEntity(StreetDTO streetDTO) {
-		Street street = new Street( streetDTO.getIdstreet(), streetDTO.getStreetname(), streetDTO.getStreettype());
+		Street street = new Street( streetDTO.getIdStreet(), streetDTO.getStreetname(), streetDTO.getStreettype());
 		return street;
 	}
 	

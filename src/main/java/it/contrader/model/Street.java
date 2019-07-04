@@ -21,7 +21,7 @@ public class Street {
 		
 	}
 	
-	public Street (int idsteet, String streetname, String streettype) {
+	public Street (int idstreet, String streetname, String streettype) {
 		this.streetname = streetname;
 		this.streettype = streettype;
 		
@@ -38,7 +38,7 @@ public class Street {
 	
 	}
 	
-	public String getSreetname() {
+	public String getStreetname() {
 		return this.streetname;
 		}
 	
@@ -48,12 +48,12 @@ public class Street {
 	}
 	
 
-	public String getSreettype() {
-		return this.streetname;
+	public String getStreettype() {
+		return this.streettype;
 		}
 	
-	public void setStreettype(String streetname) {
-		this.streetname = streetname;
+	public void setStreettype(String streettype) {
+		this.streettype = streettype;
 		
 	}
 	

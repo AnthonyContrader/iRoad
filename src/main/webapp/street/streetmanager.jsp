@@ -28,9 +28,9 @@
 
 	<table>
 		<tr>
-		    <th>StreetType</th>
+		    <th>Street Name</th>
 			
-			<th>StreetName</th>
+			<th>Street Type</th>
 		     <th>ID </th>
 			<th></th>
 			<th></th>
@@ -39,16 +39,16 @@
 			for (StreetDTO s : list) {
 		%>
 		<tr>
-			<td><a href=StreetServlet?mode=read&idStreet=<%=s.getIdstreet()%>>
-					<%=s.getStreettype()%>
+			<td><a href=StreetServlet?mode=read&idstreet=<%=s.getIdStreet()%>>
+			    <%=s.getStreetname()%>
 			</a></td>
-			<td><%=s.getStreetname()%></td>
-			<td><%=s.getIdstreet()%></td>
+			<td><%=s.getStreettype()%></td>
+			<td><%=s.getIdStreet()%></td>
 			
 			
-			<td><a href=StreetServlet?mode=read&update=true&idStreet=<%=s.getIdstreet()%>><img width="20px" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Files-Edit-File-icon.png"></a>
+			<td><a href=StreetServlet?mode=read&update=true&idstreet=<%=s.getIdStreet()%>><img width="20px" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Files-Edit-File-icon.png"></a>
 			</td>
-			<td><a href=StreetServlet?mode=delete&idStreet=<%=s.getIdstreet()%>><img width="20px" src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"></a>
+			<td><a href=StreetServlet?mode=delete&idstreet=<%=s.getIdStreet()%>><img width="20px" src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"></a>
 			</td>
 
 		</tr>
@@ -62,23 +62,28 @@
 <form id="floatright" action="StreetServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="street">StreetName</label>
+      <label for="street">Street Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="street" name="StreetName" placeholder="inserisci il Nome della strada">
+      <input type="text" id="street" name="streetname" placeholder="inserisci il Nome della strada">
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="type">StreetType</label>
+     <label for="type">Street Type</label>
     </div>
     <div class="col-75">
- 			<select id="type" name="StreetType">
-  				<option value="autovelox">Autovelox</option>
-  				<option value="anemometro">Anemometro</option>
-  				<option value="dinamometro">Dinamometro</option>
- 
-			</select>
+ 			<select id="type" name="streettype">
+ 			<option value="">..</option>
+  				<option value="Autostrada">Autostrada</option>
+  				<option value="Stradastatale">Strada statale</option>
+  				<option value="Stradaregionale"> Strada regionale </option>
+  				<option value="Stradaprovinciale">Strada provinciale</option>
+  				<option value="Stradacomunale">Stradacomunale</option>
+                 <option value="Stradaextraurbana ">Strada extraurbana</option>    
+                   <option value="Stradaextraurbana ">Strada extraurbana</option> 
+                 
+                   </select>                         
     	</div>
   </div>
   

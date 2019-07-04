@@ -15,8 +15,9 @@
    <a  href="homeadmin.jsp">Home</a>
   <a class="active" href="UserServlet?mode=userlist">Users</a>
    <a href="SensorServlet?mode=sensorlist">Sensors</a>
-    <a href="SreetServlet?mode=userlist">Streets</a>
+    <a href="StreetServlet?mode=streetlist">Streets</a>
     <a href="VehicleServlet?mode=vehiclelist">Vehicle</a>
+   <a href="ScreenServlet?mode=screenlist">Screens</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <div class="main">

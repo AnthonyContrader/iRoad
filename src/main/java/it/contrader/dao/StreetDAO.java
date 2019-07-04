@@ -54,8 +54,8 @@ public  class StreetDAO implements DAO<Street> {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setString(1, streetToInsert.getSreetname());
-			preparedStatement.setString(2, streetToInsert.getSreettype());
+			preparedStatement.setString(1, streetToInsert.getStreetname());
+			preparedStatement.setString(2, streetToInsert.getStreettype());
 			
 			preparedStatement.execute();
 			return true;
@@ -101,21 +101,21 @@ public  class StreetDAO implements DAO<Street> {
 		if (!streetRead.equals(streetToUpdate)) {
 			try {
 				// Fill the streetToUpdate object
-				if (streetToUpdate.getSreetname() == null || streetToUpdate.getSreetname().equals("")) {
-					streetToUpdate.setStreetname(streetRead.getSreetname());
+				if (streetToUpdate.getStreetname() == null || streetToUpdate.getStreetname().equals("")) {
+					streetToUpdate.setStreetname(streetRead.getStreetname());
 				}
 
 
-				if (streetToUpdate.getSreettype() == null || streetToUpdate.getSreettype().equals("")) {
-					streetToUpdate.setStreettype(streetRead.getSreettype());
+				if (streetToUpdate.getStreettype() == null || streetToUpdate.getStreettype().equals("")) {
+					streetToUpdate.setStreettype(streetRead.getStreettype());
 				}
 
 				// Update the street
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				
-				preparedStatement.setString(1, streetToUpdate.getSreetname());
+				preparedStatement.setString(1, streetToUpdate.getStreetname());
 			
-				preparedStatement.setString(2, streetToUpdate.getSreettype());
+				preparedStatement.setString(2, streetToUpdate.getStreettype());
 	
 				preparedStatement.setInt(3, streetToUpdate.getIdstreet());
 				int a = preparedStatement.executeUpdate();

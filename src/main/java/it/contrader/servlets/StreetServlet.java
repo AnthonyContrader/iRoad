@@ -66,7 +66,7 @@ public class StreetServlet extends HttpServlet {
     	case "INSERT" :
     		String streetname = request.getParameter("streetname").toString();
     		String streettype = request.getParameter("streettype").toString();
-    		dto = new StreetDTO ( streetname, streettype);
+    		dto = new StreetDTO (streetname, streettype);
     		ans = service.insert(dto);
     		request.setAttribute("ans", ans);
     		updatelist(request);

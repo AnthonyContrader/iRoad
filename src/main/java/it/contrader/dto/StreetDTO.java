@@ -27,7 +27,7 @@ public class StreetDTO {
 			this.streettype = streettype;
 		}
 		
-		public int getIdstreet() {
+		public int getIdStreet() {
 			return this.idstreet;	
 		}
 		

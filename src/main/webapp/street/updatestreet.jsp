@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.SensorDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.StreetDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit User</title>
+<title>Edit Street</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -13,39 +13,45 @@
   <a  href="homeadmin.jsp">Home</a>
   <a class="active" href="UserServlet?mode=userlist">Users</a>
    <a href="SensorServlet?mode=sensorlist">Sensors</a>
-    <a href="SreetServlet?mode=userlist">Streets</a>
+    <a href="StreetServlet?mode=streetlist">Streets</a>
     <a href="VehicleServlet?mode=vehiclelist">Vehicle</a>
+    <a href="ScreenServlet?mode=screenlist">Screens</a>
 </div>
 <br>
 <div class="main">
 
-<%SensorDTO s = (SensorDTO) request.getAttribute("dto");%>
+<%StreetDTO s = (StreetDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="SensorServlet?mode=update&idSensor=<%=s.getIdSensor()%>" method="post">
+<form id="floatleft" action="SensorServlet?mode=update&idStreet=<%=s.getIdStreet()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="sensor">SensorPosition</label>
+      <label for="street">Street Name </label>
     </div>
     <div class="col-75">
-      <input type="text" id="sensor" name="SensorPosition" value=<%=s.getSensorPosition()%>>
+       <input type="text" id="user" name="username" value=<%=s.getStreetname()%>>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="type">SensorType</label>
+     <label for="type">Street Type</label>
     </div>
     <div class="col-75">
-      <select id="type" name="sensortype">
-  				<option value="autovelox">Autovelox</option>
-  				<option value="anemometro">Anemometro</option>
-  				<option value="dinamometro">Dinamometro</option>
+      <select id="type" name="streettype">
+  				<option value="">..</option>
+  				<option value="Autostrada">Autostrada</option>
+  				<option value="Stradastatale">Strada statale</option>
+  				<option value="Stradaregionale"> Strada regionale </option>
+  				<option value="Stradaprovinciale">Strada provinciale</option>
+  				<option value="Stradacomunale">Stradacomunale</option>
+                 <option value="Stradaextraurbana ">Strada extraurbana</option>    
+                   <option value="Stradaextraurbana ">Strada extraurbana</option> 
  
 			</select> 
     </div>
   </div>
  
-      <button type="submit" >Edit</button>
+      <button type="submit" >Done</button>
 </form>
 
 	
