@@ -18,6 +18,7 @@
    <a href="SensorServlet?mode=sensorlist">Sensors</a>
     <a href="StreetServlet?mode=streetlist">Streets</a>
     <a href="VehicleServlet?mode=vehiclelist">Vehicle</a>
+    <a href="StreetServlet?mode=streetlist">Street</a>
     
   
   <a href="LogoutServlet" id="logout">Logout</a>
