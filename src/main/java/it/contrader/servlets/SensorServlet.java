@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.SensorDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.service.Service;
 import it.contrader.service.SensorService;
 
@@ -69,6 +70,7 @@ public class SensorServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
+			/*
 			SensorPosition = request.getParameter("SensorPosition");
 			SensorType = request.getParameter("SensorType");
 			idSensor = Integer.parseInt(request.getParameter("idSensor"));
@@ -77,7 +79,21 @@ public class SensorServlet extends HttpServlet {
 			updateList(request);
 			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
 			break;
-
+*/
+			SensorPosition = request.getParameter("sensorPosition");
+			SensorType = request.getParameter("sensorType");
+		
+			
+			idSensor = Integer.parseInt(request.getParameter("idSensor"));
+			dto = new SensorDTO (idSensor, SensorPosition, SensorType);
+			ant = service.update(dto);
+			updateList(request);
+			getServletContext().getRequestDispatcher("/sensor/sensormanager.jsp").forward(request, response);
+			break;
+			
+			
+			
+			
 		case "DELETE":
 			idSensor = Integer.parseInt(request.getParameter("idSensor"));
 			ant = service.delete(idSensor);
