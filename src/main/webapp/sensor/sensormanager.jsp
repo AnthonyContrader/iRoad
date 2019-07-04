@@ -46,9 +46,9 @@
 			<td><%=s.getIdSensor()%></td>
 			
 			
-			<td><a href=SensorServlet?mode=read&update=true&idSensor=<%=s.getIdSensor()%>>Edit</a>
+			<td><a href=SensorServlet?mode=read&update=true&idSensor=<%=s.getIdSensor()%>><img width="20px" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Files-Edit-File-icon.png"></a>
 			</td>
-			<td><a href=SensorServlet?mode=delete&idSensor=<%=s.getIdSensor()%>>Delete</a>
+			<td><a href=SensorServlet?mode=delete&idSensor=<%=s.getIdSensor()%>><img width="20px" src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"></a>
 			</td>
 
 		</tr>

@@ -44,9 +44,9 @@
 			</a></td>
 			<td><%=u.getPassword()%></td>
 			<td><%=u.getUsertype()%></td>
-			<td><a href=UserServlet?mode=read&update=true&id=<%=u.getId()%>>Edit</a>
+			<td><a href=UserServlet?mode=read&update=true&id=<%=u.getId()%>><img width="20px" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Files-Edit-File-icon.png"></a>
 			</td>
-			<td><a href=UserServlet?mode=delete&id=<%=u.getId()%>>Delete</a>
+			<td><a href=UserServlet?mode=delete&id=<%=u.getId()%>><img width="20px" src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"></a>
 			</td>
 
 		</tr>

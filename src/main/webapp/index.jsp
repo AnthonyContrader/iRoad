@@ -4,8 +4,9 @@
 <link href="css/vittoriostyle.css" rel="stylesheet">
 
 <title>Login iRoad</title>
+
 </head>
-<body>
+<body style="background-image: url('http://www.motivi.mk/wp-content/themes/jobcareer/backend/assets/images/background/bg6.png'); background-size : 150%">
 
 
 
@@ -13,7 +14,7 @@
 
 		<form class="login" action="LoginServlet" method="post">
 		
-
+<img src="http://zellwax.com/wp-content/uploads/2016/07/road-marking.png" width="100" height="100" style="margin-left: 120px" />
 				<label for="user">Username: </label>
 			
 				<input type="text" id="user" name="username" placeholder="Insert username">
@@ -25,6 +26,7 @@
 			<button type="submit" value="Login" name="pulsante">Login</button>
 		</form>
 
-</div>	
+</div>
+
 </body>
 </html>

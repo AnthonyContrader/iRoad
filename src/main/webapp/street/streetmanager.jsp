@@ -46,9 +46,9 @@
 			<td><%=s.getIdstreet()%></td>
 			
 			
-			<td><a href=StreetServlet?mode=read&update=true&idStreet=<%=s.getIdstreet()%>>Edit</a>
+			<td><a href=StreetServlet?mode=read&update=true&idStreet=<%=s.getIdstreet()%>><img width="20px" src="http://icons.iconarchive.com/icons/icons8/windows-8/256/Files-Edit-File-icon.png"></a>
 			</td>
-			<td><a href=StreetServlet?mode=delete&idStreet=<%=s.getIdstreet()%>>Delete</a>
+			<td><a href=StreetServlet?mode=delete&idStreet=<%=s.getIdstreet()%>><img width="20px" src="https://img.icons8.com/cotton/2x/delete-sign--v2.png"></a>
 			</td>
 
 		</tr>
@@ -62,10 +62,10 @@
 <form id="floatright" action="StreetServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="sensor">StreetName</label>
+      <label for="street">StreetName</label>
     </div>
     <div class="col-75">
-      <input type="text" id="sensor" name="StreetName" placeholder="inserisci il Nome della strada">
+      <input type="text" id="street" name="StreetName" placeholder="inserisci il Nome della strada">
     </div>
   </div>
   <div class="row">
