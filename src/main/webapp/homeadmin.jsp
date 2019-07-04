@@ -30,12 +30,17 @@
 			<img alt="center" src="https://image.freepik.com/free-vector/infographic-timeline-concept-with-road_23-2147861210.jpg">
 			</div >
 			<div class="col-70">
-			<p> Lorem Ipsum è un testo segnaposto utilizzato nel settore della tipografia e della stampa. Lorem Ipsum 
-				è considerato il testo segnaposto standard sin dal sedicesimo secolo, quando un anonimo tipografo prese 
-					una cassetta di caratteri e li assemblò per preparare un testo campione. È sopravvissuto non solo a più 
-				di cinque secoli, ma anche al passaggio alla videoimpaginazione, pervenendoci sostanzialmente inalterato.
- 				Fu reso popolare, negli anni ’60, con la diffusione dei fogli di caratteri trasferibili “Letraset”, che 
- 				contenevano passaggi del Lorem Ipsum, e più recentemente da software di impaginazione come Aldus PageMaker, </p>
+			<p> Il TEAM ricerca e sviluppo di iRoad vi da il benvenuto!<p>
+			Stanco delle solite applicazioni da pochi spiccioli? Da oggi si cambia!<p>
+		    ---------------------------------------------------------		   
+		    <p> (WORK IN PROGRES) By <p>
+		    Antonio Tunzi, Anes Bend, Riccardo De Vecchis, Mjid Alamdari, Davide Bologna.<p>
+		    <p>
+		    ---------------------------------------------------------
+		    
+		    <p>..[COOMING SOON]..<p >
+		    
+			  </p>
 			</div>
 
 			</div>
