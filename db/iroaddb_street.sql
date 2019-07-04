@@ -16,29 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `sensor`
+-- Table structure for table `street`
 --
 
-DROP TABLE IF EXISTS `sensor`;
+DROP TABLE IF EXISTS `street`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `sensor` (
-  `idSensor` int(11) NOT NULL AUTO_INCREMENT,
-  `SensorPosition` varchar(45) NOT NULL,
-  `SensorType` varchar(45) NOT NULL,
-  PRIMARY KEY (`idSensor`),
-  UNIQUE KEY `idSensor_UNIQUE` (`idSensor`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+CREATE TABLE `street` (
+  `idstreet` int(11) NOT NULL AUTO_INCREMENT,
+  `streetname` varchar(45) NOT NULL,
+  `streettype` varchar(45) NOT NULL,
+  PRIMARY KEY (`idstreet`),
+  UNIQUE KEY `idstreet_UNIQUE` (`idstreet`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `sensor`
+-- Dumping data for table `street`
 --
 
-LOCK TABLES `sensor` WRITE;
-/*!40000 ALTER TABLE `sensor` DISABLE KEYS */;
-INSERT INTO `sensor` VALUES (2,'100s','autovlx'),(3,'100f','autoradar');
-/*!40000 ALTER TABLE `sensor` ENABLE KEYS */;
+LOCK TABLES `street` WRITE;
+/*!40000 ALTER TABLE `street` DISABLE KEYS */;
+/*!40000 ALTER TABLE `street` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-07-04 10:19:50
+-- Dump completed on 2019-07-04 10:19:49

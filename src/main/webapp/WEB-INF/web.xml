@@ -42,4 +42,24 @@
     <servlet-name>SensorServlet</servlet-name>
     <url-pattern>/SensorServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StreetServlet</display-name>
+    <servlet-name>StreetServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.StreetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StreetServlet</servlet-name>
+    <url-pattern>/StreetServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>VehicleServlet</display-name>
+    <servlet-name>VehicleServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.VehicleServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>VehicleServlet</servlet-name>
+    <url-pattern>/VehicleServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
