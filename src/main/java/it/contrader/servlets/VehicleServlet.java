@@ -53,19 +53,20 @@ public class VehicleServlet extends HttpServlet {
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/cehicle/updatecehicle.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/vehicle/updatecehicle.jsp").forward(request, response);
 			
 			break;
 
 		case "INSERT":
 			String nameVehicle = request.getParameter("nameVehicle").toString();
 			String typeVehicle = request.getParameter("typeVehicle").toString();
-			double    speedVehicle = Double.parseDouble(request.getParameter("speedVehicle"));
-			double    weightVehicle = Double.parseDouble(request.getParameter("weightVehicle"));
-			double    latVehicle = Double.parseDouble(request.getParameter("latVehicle"));
-			double    longVehicle = Double.parseDouble(request.getParameter("longVehicle"));
+			double speedVehicle = Double.parseDouble(request.getParameter("speedVehicle").toString());
+			double weightVehicle = Double.parseDouble(request.getParameter("weightVehicle").toString());
+			double longVehicle = Double.parseDouble(request.getParameter("longVehicle").toString());
+			double latVehicle = Double.parseDouble(request.getParameter("latVehicle").toString());
 			
-			dto = new VehicleDTO (nameVehicle,typeVehicle,speedVehicle,weightVehicle,latVehicle,longVehicle);
+			
+			dto = new VehicleDTO (nameVehicle,typeVehicle,speedVehicle,weightVehicle,longVehicle,latVehicle);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -77,11 +78,12 @@ public class VehicleServlet extends HttpServlet {
 			typeVehicle = request.getParameter("typeVehicle");
 			speedVehicle = Double.parseDouble(request.getParameter("speedVehicle"));
 			weightVehicle = Double.parseDouble(request.getParameter("weightVehicle"));
-			latVehicle = Double.parseDouble(request.getParameter("latVehicle"));
 			longVehicle = Double.parseDouble(request.getParameter("longVehicle"));
+			latVehicle = Double.parseDouble(request.getParameter("latVehicle"));
+			
 			
 			idVehicle = Integer.parseInt(request.getParameter("idVehicle"));
-			dto = new VehicleDTO (idVehicle,nameVehicle, typeVehicle, speedVehicle, weightVehicle, latVehicle, longVehicle);
+			dto = new VehicleDTO (idVehicle,nameVehicle, typeVehicle, speedVehicle, weightVehicle, longVehicle,latVehicle);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/vehicle/vehiclemanager.jsp").forward(request, response);

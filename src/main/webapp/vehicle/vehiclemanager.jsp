@@ -106,19 +106,20 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="lat">Latitudine</label>
-    </div>
-    <div class="col-75">
-      <input type="text" id="lat" name="LatVehicle" placeholder="inserisci latitudine">
-    </div>
-  </div>
-   <div class="row">
-    <div class="col-25">
       <label for="long">Longitudine</label>
     </div>
     <div class="col-75">
-      <input type="text" id="long" name="LongVehicle" placeholder="inserisci longitudine">
+      <input type="text" id="long" name="longVehicle" placeholder="inserisci longitudine">
     </div>
+   <div class="row">
+   <div class="col-25">
+      <label for="lat">Latitudine</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lat" name="latVehicle" placeholder="inserisci latitudine">
+    </div>
+  </div>
+    
   </div>
   
       <button type="submit" >Insert</button>

@@ -22,12 +22,20 @@
 
 <table>
 	<tr> 
-		<th>NameVehicle</th>
-		<th>TypeVehicle</th>
+		<th>Nome Veicolo</th>
+			<th>Tipologia</th>
+			<th>Velocità</th>
+			<th>Peso</th>
+			<th>Longitudine</th>
+			<th>Latitudine</th>
 	</tr>
 	<tr>
 		<td><%=v.getNameVehicle()%></td>
 		<td> <%=v.getTypeVehicle()%></td>
+		<td><%=v.getSpeedVehicle()%></td>
+			<td><%=v.getWeightVehicle()%></td>
+			<td><%=v.getLatVehicle()%></td>
+			<td><%=v.getLongVehicle()%></td>
 	</tr>	
 </table>
 

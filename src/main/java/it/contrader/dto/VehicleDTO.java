@@ -32,23 +32,23 @@ public class VehicleDTO {
 		
 	}
 
-	public VehicleDTO (String nameVehicle, String typeVehicle, double speedVehicle, double weightVehicle, double latVehicle, double longVehicle) {
+	public VehicleDTO (String nameVehicle, String typeVehicle, double speedVehicle, double weightVehicle,double longVehicle, double latVehicle) {
 		this.nameVehicle = nameVehicle;
 		this.typeVehicle = typeVehicle;
 		this.speedVehicle = speedVehicle;
 		this.weightVehicle = weightVehicle;
-		this.latVehicle = latVehicle;
 		this.longVehicle = longVehicle;
+		this.latVehicle = latVehicle;
 	}
 
-	public VehicleDTO (int idVehicle, String nameVehicle, String typeVehicle,  double speedVehicle, double weightVehicle, double latVehicle, double longVehicle) {
+	public VehicleDTO (int idVehicle, String nameVehicle, String typeVehicle,  double speedVehicle, double weightVehicle,double longVehicle, double latVehicle ) {
 		this.idVehicle = idVehicle;
 		this.nameVehicle = nameVehicle;
 		this.typeVehicle = typeVehicle;
 		this.speedVehicle = speedVehicle;
 		this.weightVehicle = weightVehicle;
-		this.latVehicle = latVehicle;
 		this.longVehicle = longVehicle;
+		this.latVehicle = latVehicle;
 	}
 
 	public int getIdVehicle() {
@@ -79,33 +79,34 @@ public class VehicleDTO {
 	public double getSpeedVehicle() {
 		return this.speedVehicle;
 	}
-	public void setSpeedVehicle(int speedVehicle) {
+	public void setSpeedVehicle(double speedVehicle) {
 		this.speedVehicle = speedVehicle;
 	}
 	
 	public double getWeightVehicle() {
 		return this.weightVehicle;
 	}
-	public void setWeightVehicle(int weightVehicle) {
+	public void setWeightVehicle(double weightVehicle) {
 		this.weightVehicle = weightVehicle;
 	}
 
-	public double getLatVehicle() {
-		return this.latVehicle;
-	}
-	public void setLatVehicle(int latVehicle) {
-		this.latVehicle = latVehicle;
-	}
 
 	public double getLongVehicle() {
 		return this.longVehicle;
 	}
-	public void setLongVehicle(int longVehicle) {
+	public void setLongVehicle(double longVehicle) {
 		this.longVehicle = longVehicle;
+	}
+	
+	public double getLatVehicle() {
+		return this.latVehicle;
+	}
+	public void setLatVehicle(double latVehicle) {
+		this.latVehicle = latVehicle;
 	}
 	
 	@Override
 	public String toString() {
-		return  idVehicle + "\t"  + nameVehicle +"\t\t"+ "\t\t" + typeVehicle + "\t\t" + speedVehicle + "\t\t" + weightVehicle + "\t\t" + latVehicle + "\t\t" + longVehicle;
+		return  idVehicle + "\t"  + nameVehicle +"\t\t"+ "\t\t" + typeVehicle + "\t\t" + speedVehicle + "\t\t" + weightVehicle + "\t\t" +  longVehicle  + "\t\t" + latVehicle;
 	}
 }

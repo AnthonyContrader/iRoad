@@ -70,7 +70,7 @@ public class StreetServlet extends HttpServlet {
     		ans = service.insert(dto);
     		request.setAttribute("ans", ans);
     		updatelist(request);
-    		getServletContext().getRequestDispatcher("/street/streetmanger.jsp").forward(request, response);
+    		getServletContext().getRequestDispatcher("/street/streetmanager.jsp").forward(request, response);
     		break;
     		
     	case "UPDATE" :

@@ -15,9 +15,9 @@ import it.contrader.model.Vehicle;
 public class VehicleDAO implements DAO<Vehicle> {
 
 	private final String QUERY_ALL = "SELECT * FROM vehicle";
-	private final String QUERY_CREATE = "INSERT INTO vehicle (nameVehicle, typeVehicle, speedVehicle, weightVehicle, latVehicle, longVehicle) VALUES (?,?,?,?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO vehicle (nameVehicle, typeVehicle, speedVehicle, weightVehicle,longVehicle,latVehicle) VALUES (?,?,?,?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM vehicle WHERE idVehicle=?";
-	private final String QUERY_UPDATE = "UPDATE vehicle SET nameVehicle=?, typeVehicle=?, speedVehicle=?, weightVehicle=?, latVehicle=?, longVehicle=?, WHERE idVehicle=?";
+	private final String QUERY_UPDATE = "UPDATE vehicle SET nameVehicle=?, typeVehicle=?, speedVehicle=?, weightVehicle=?,  longVehicle=? ,latVehicle=? WHERE idVehicle=?";
 	private final String QUERY_DELETE = "DELETE FROM vehicle WHERE idVehicle=?";
 
 	public VehicleDAO() {
@@ -37,10 +37,11 @@ public class VehicleDAO implements DAO<Vehicle> {
 				String typeVehicle = resultSet.getString("typeVehicle");
 				double speedVehicle = resultSet.getDouble("speedVehicle");
 				double weightVehicle = resultSet.getDouble("weightVehicle");
-				double latVehicle = resultSet.getDouble("latVehicle");
-				double longVehicle = resultSet.getDouble("longVehicle");
 				
-				vehicle = new Vehicle(nameVehicle, typeVehicle, speedVehicle, weightVehicle, latVehicle, longVehicle);
+				double longVehicle = resultSet.getDouble("longVehicle");
+				double latVehicle = resultSet.getDouble("latVehicle");
+				
+				vehicle = new Vehicle(nameVehicle, typeVehicle, speedVehicle, weightVehicle,  longVehicle ,latVehicle);
 				vehicle.setIdVehicle(idVehicle);
 				vehiclesList.add(vehicle);
 			}
@@ -57,9 +58,9 @@ public class VehicleDAO implements DAO<Vehicle> {
 			preparedStatement.setString(1, vehicleToInsert.getNameVehicle());
 			preparedStatement.setString(3, vehicleToInsert.getTypeVehicle());
 			preparedStatement.setDouble(4, vehicleToInsert.getSpeedVehicle());
-			preparedStatement.setDouble(5, vehicleToInsert.getWeightVehicle());
-			preparedStatement.setDouble(5, vehicleToInsert.getLatVehicle());
-			preparedStatement.setDouble(5, vehicleToInsert.getLongVehicle());
+			preparedStatement.setDouble(5, vehicleToInsert.getWeightVehicle());	
+			preparedStatement.setDouble(6, vehicleToInsert.getLongVehicle());
+			preparedStatement.setDouble(7, vehicleToInsert.getLatVehicle());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="it.contrader.dto.SensorDTO"%>
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.StreetDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,26 +10,29 @@
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active"  href="SensorServlet?mode=sensorlist">Sensor</a>
+  <a href="StreetServlet?mode=streetlist"><img width="15px" src="http://aux4.iconspalace.com/uploads/835558919617800347.png"> Back</a>
+  <a class="active"  href="StreetServlet?mode=streetlist">Street</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>
 
 <div class="main">
-<%SensorDTO s = (SensorDTO) request.getAttribute("dto");%>
+<% StreetDTO s = (StreetDTO) request.getAttribute("dto");%>
 
 
 <table>
 	<tr> 
 	
-		<th>SensorPosition</th>
-		<th>SensorType</th>
+		<th>Street Name</th>
+			
+			<th>Street Type</th>
+		     <th>ID </th>
 	</tr>
 	<tr>
 		
-		<td> <%=s.getSensorPosition()%></td>
-		<td> <%=s.getSensorType()%></td>
+		<td> <%=s.getStreetname()%></td>
+		<td> <%=s.getStreettype()%></td>
+		<td> <%=s.getIdStreet()%></td>
 	</tr>	
 </table>
 
