@@ -22,31 +22,33 @@
     
   
   <a href="LogoutServlet" id="logout">Logout</a>
-   <a href="" id="logout"> Profil of ${user.getUsername()}</a>
+   <a href="homeadmin.jsp" id="logout"> Profil of ${user.getUsername()}</a>
 </div>
 
 <div class="main" >
 <h1></h1>
 	<div class="row"> 
-			<div class="col-25">
+			<div class="col-25" style="margin-left: 0px">
 			
-			<img alt="center" src="https://image.freepik.com/free-vector/infographic-timeline-concept-with-road_23-2147861210.jpg">
+			<img src="https://i.ibb.co/y6Ws58K/Artboard-1.png" width="400%"  >
 			</div >
-			<div class="col-70">
-			<p><h3> Il TEAM ricerca e sviluppo di iRoad vi da il benvenuto!
-			Stanco delle solite applicazioni da pochi spiccioli? Da oggi si cambia!</h3><p>
+			<div class="col-70" style="margin-top: 200px">
+			
+			<p><p>
+			<p><p>
+			<p><p>
 		    	   
-		    <p><h1>WORK IN PROGRESS BY </h1>  <p>
-		    _____________________________________________________________________________	
-		    <h2>
 		    
-		     ANTONIO Tunzi, ANES Bend, RIRCCARDO De Vecchis, MAJID Alamdari, DAVIDE Bologna.</h2><p>
+		    __________________________________________________________________________
+		    <h3> Il TEAM ricerca e sviluppo di iRoad vi da il benvenuto!
+			Stanco delle solite applicazioni da pochi spiccioli? Da oggi si cambia!</h3> 
+		    
+		  <p><h2>
+		    
+		     ANTONIO Tunzi, ANES Bend, RICCARDO De Vecchis, MAJID Alamdari, DAVIDE Bologna.</h2><p>
 		   
-		    ______________________________________________________________________________
 		    
-		    <p><h1>..COOMING SOON!!!..</h1><p >
-		    
-			  </p>
+			 
 			</div>
 
 			</div>
