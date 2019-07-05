@@ -5,16 +5,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Edit User</title>
+<title>Edit Screen</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=userlist">Users</a>
-   <a href="SensorServlet?mode=sensorlist">Sensors</a>
-    <a href="SreetServlet?mode=userlist">Streets</a>
-    <a href="VehicleServlet?mode=vehiclelist">Vehicle</a>
+  <a class="active" href="ScreenServlet?mode=screenlist"><img width="15px" src="http://aux4.iconspalace.com/uploads/835558919617800347.png"> Back</a>
 </div>
 <br>
 <div class="main">

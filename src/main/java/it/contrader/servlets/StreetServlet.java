@@ -77,11 +77,12 @@ public class StreetServlet extends HttpServlet {
     		
     		 streetname = request.getParameter("streetname");
      		 streettype = request.getParameter("streettype");
-     		 idstreet = Integer.parseInt(request.getParameter("idstreet"));
+     		 
+     		idstreet = Integer.parseInt(request.getParameter("idstreet"));
      		 dto = new StreetDTO ( idstreet, streetname, streettype);
      		 ans = service.update(dto);
      		 updatelist(request);
-     		 getServletContext().getRequestDispatcher("street/streetmanager.jsp").forward(request, response);
+     		 getServletContext().getRequestDispatcher("/street/streetmanager.jsp").forward(request, response);
      		 break;
     	case "DELETE":
         	

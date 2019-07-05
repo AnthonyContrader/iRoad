@@ -23,7 +23,7 @@
 <%StreetDTO s = (StreetDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="SensorServlet?mode=update&idStreet=<%=s.getIdStreet()%>" method="post">
+<form id="floatleft" action="StreetServlet?mode=update&idstreet=<%=s.getIdStreet()%>" method="post">
   <div class="row">
     <div class="col-25">
       <label for="street">Street Name </label>
