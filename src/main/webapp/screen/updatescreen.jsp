@@ -18,24 +18,16 @@
 <%ScreenDTO sc = (ScreenDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="SensorServlet?mode=update&idSensor=<%=sc.getIdScreen()%>" method="post">
+<form id="floatleft" action="ScreenServlet?mode=update&idScreen=<%=sc.getIdScreen()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="sensor">SensorPosition</label>
+     <label for="type">output</label>
     </div>
     <div class="col-75">
-      <input type="text" id="sensor" name="output" value=<%=sc.getOutput()%>>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-25">
-     <label for="type">SensorType</label>
-    </div>
-    <div class="col-75">
-      <select id="type" name="sensortype">
-  				<option value="autovelox">Autovelox</option>
-  				<option value="anemometro">Anemometro</option>
-  				<option value="dinamometro">Dinamometro</option>
+      <select id="type" name="output">
+  				<option value="Attento Incidente">Attento Incidente</option>
+  				<option value="Attento Vento Forte">Attento Vento Forte</option>
+  				<option value="Attento un Veicolo non sta rispettando il semaforo">Attento un Veicolo non sta rispettando il semaforo</option>
  
 			</select> 
     </div>
