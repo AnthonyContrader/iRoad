@@ -9,95 +9,88 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import it.contrader.dto.SensorDTO;
 import it.contrader.dto.UserDTO;
-import it.contrader.services.UserService;
+import it.contrader.services.SensorService;
 
 import java.util.List;
 
 
 @Controller
-@RequestMapping("/User")
+@RequestMapping("/Sensor")
 public class SensorController {
 
-	private final UserService userService;
+	private final SensorService sensorService;
 	private HttpSession session;
 	
 	@Autowired
-	public SensorController(UserService userService) {
-		this.userService = userService;
+	public SensorController(SensorService sensorService) {
+		this.sensorService = sensorService;
 	}
 
-	private void visualUser(HttpServletRequest request){
-		List<UserDTO> allUser = this.userService.getListaUserDTO();
-		request.setAttribute("allUserDTO", allUser);
+	private void visualSensor(HttpServletRequest request){
+		List<SensorDTO> allSensor = this.sensorService.getListaSensorDTO();
+		request.setAttribute("allSensorDTO", allSensor);
 	}
 	
-	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
-	public String userManagement(HttpServletRequest request) {
-		visualUser(request);
-		return "homeUser";		
+	@RequestMapping(value = "/sensorManagement", method = RequestMethod.GET)
+	public String sensorManagement(HttpServletRequest request) {
+		visualSensor(request);
+		return "homeSensor";		
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("id", id);
-		this.userService.deleteUserById(id);
-		visualUser(request);
-		return "homeUser";
+		int idSensor = Integer.parseInt(request.getParameter("idSensor"));
+		request.setAttribute("idSensor", idSensor);
+		this.sensorService.deleteSensorById(idSensor);
+		visualSensor(request);
+		return "homeSensor";
 		
 	}
 	
 	@RequestMapping(value = "/crea", method = RequestMethod.GET)
 	public String insert(HttpServletRequest request) {
-		visualUser(request);
+		visualSensor(request);
 		request.setAttribute("option", "insert");
-		return "creaUser";
+		return "creaSensor";
 		
 	}
 	
-	@RequestMapping(value = "/cercaUser", method = RequestMethod.GET)
-	public String cercaUser(HttpServletRequest request) {
+	@RequestMapping(value = "/cercaSensor", method = RequestMethod.GET)
+	public String cercaSensor(HttpServletRequest request) {
 
 		final String content = request.getParameter("search");
 
-		List<UserDTO> allUser = this.userService.findUserDTOByUsername(content);
-		request.setAttribute("allUserDTO", allUser);
+		List<SensorDTO> allSensor = this.sensorService.findSensorDTOBySensorType(content);
+		request.setAttribute("allSensorDTO", allSensor);
 
-		return "homeUser";
+		return "homeSensor";
 
 	}
 	
-	@RequestMapping(value = "/creaUser", method = RequestMethod.POST)
-	public String insertUser(HttpServletRequest request) {
-		String username = request.getParameter("username").toString();
-		String password = request.getParameter("password").toString();
-		String ruolo = request.getParameter("ruolo").toString();
+	@RequestMapping(value = "/creaSensor", method = RequestMethod.POST)
+	public String insertSensor(HttpServletRequest request) {
+		String sensorPosition = request.getParameter("sensorPosition").toString();
+		String sensorType = request.getParameter("sensorType").toString();
 
-		UserDTO userObj = new UserDTO(0, username, password, ruolo,"");
+		SensorDTO sensorObj = new SensorDTO(0, sensorPosition, sensorType);
 		
-		userService.insertUser(userObj);
-
-		visualUser(request);
-		return "homeUser";
-	}
+		sensorService.insertSensor(sensorObj);
 	
+		visualSensor(request);
+		return "homeSensor";
+	}
+		
+		
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public String loginControl(HttpServletRequest request) {
 
 		session = request.getSession();
-		final String username = request.getParameter("username");
-		final String password = request.getParameter("password");
-		final UserDTO userDTO = userService.getByUsernameAndPassword(username, password);
-		final String ruolo = userDTO.getRuolo();
-		if (!StringUtils.isEmpty(ruolo)) {
-			session.setAttribute("utenteCollegato", userDTO);
-			if (ruolo.equals("ADMIN")) {
-				return "home";
-			} else if (ruolo.equals("CHATMASTER")) {
-				return "home";
-			}
-		}
+		final String sensorPosition = request.getParameter("sensorPosition");
+		final String sensorType = request.getParameter("sensorType");
+		final SensorDTO sensorDTO = sensorService.getBySensorPositionAndSensorType(sensorPosition, sensorType);
+		
 		return "index";
 	}
 }
