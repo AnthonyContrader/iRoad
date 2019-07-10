@@ -67,7 +67,7 @@ public class ScreenController {
 	@RequestMapping(value = "/creaScreen", method = RequestMethod.POST)
 	public String insertScreen(HttpServletRequest request) {
 		String output = request.getParameter("output").toString();
-		ScreenDTO screenObj = new ScreenDTO(0, output"");
+		ScreenDTO screenObj = new ScreenDTO(0, output);
 		
 		screenService.insertScreen(screenObj);
 
