@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.contrader.dto.SensorDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.services.SensorService;
 
 import java.util.List;
