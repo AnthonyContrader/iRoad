@@ -8,10 +8,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ScreenDTO {
+public class StreetDTO {
 
-	private Integer idScreen;
+	private Integer idStreet;
 
-	private String output;
+	private String streetName;
+	
+	private String streetType;
+
 	
 }
