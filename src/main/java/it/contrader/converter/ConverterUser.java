@@ -1,6 +1,7 @@
 package it.contrader.converter;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import it.contrader.dto.UserDTO;
@@ -15,9 +16,9 @@ public class ConverterUser {
 			userDTO.setIdUser(user.getIdUser());
 			userDTO.setUsername(user.getUsername());
 			userDTO.setPassword(user.getPassword());
-			userDTO.setEmail(user.getEmail());
-			userDTO.setRuolo(user.getRuolo());
+			userDTO.setUsertype(user.getUsertype());
 		}
+		
 		return userDTO;
 	}
 
@@ -28,8 +29,8 @@ public class ConverterUser {
 			user.setIdUser(userDTO.getIdUser());
 			user.setUsername(userDTO.getUsername());
 			user.setPassword(userDTO.getPassword());
-			user.setEmail(userDTO.getEmail());
-			user.setRuolo(userDTO.getRuolo());
+			
+			user.setUsertype(userDTO.getUsertype());
 		}
 		return user;
 	}
