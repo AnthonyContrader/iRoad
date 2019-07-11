@@ -9,7 +9,7 @@ import javax.servlet.http.HttpSession;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.core.env.SystemEnvironmentPropertySource;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.util.StringUtils;
@@ -171,7 +171,7 @@ public class UserController {
 	public String loginControl(HttpServletRequest request) {
 
 
-
+	
 		session = request.getSession();
 
 		final String username = request.getParameter("username");
@@ -181,6 +181,7 @@ public class UserController {
 		final UserDTO userDTO = userService.getByUsernameAndPassword(username, password);
 
 		final String usertype = userDTO.getUsertype();
+		
 
 		if (!StringUtils.isEmpty(usertype)) {
 
@@ -190,7 +191,7 @@ public class UserController {
 
 				return "home";
 
-			} else if (usertype.equals("CHATMASTER")) {
+			} else if (usertype.equals("USER")) {
 
 				return "home";
 
