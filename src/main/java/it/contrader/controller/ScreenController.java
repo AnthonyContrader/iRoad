@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("/Screen")
 public class ScreenController {
 	@Autowired
-	private final ScreenService screenService;
+	private ScreenService screenService;
 	private HttpSession session;
 	
 	
