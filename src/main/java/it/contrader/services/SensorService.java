@@ -40,7 +40,7 @@ public class SensorService {
 		return sensorRepository.save(ConverterSensor.toEntity(sensorDTO)) != null;
 	}
 
-	public boolean updateUser(SensorDTO sensorDTO) {
+	public boolean updateSensor(SensorDTO sensorDTO) {
 		return sensorRepository.save(ConverterSensor.toEntity(sensorDTO)) != null;
 	}
 	

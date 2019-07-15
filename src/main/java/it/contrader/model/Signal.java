@@ -1,4 +1,3 @@
-
 package it.contrader.model;
 
 import javax.persistence.Column;
@@ -8,8 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 
-import org.springframework.lang.Nullable;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,19 +15,17 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Sensor {
+
+public class Signal {
 
 	@Id
-	@Column(name = "idSensor")
+	@Column(name = "idSignal")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer idSensor;
-
-	@Column(name = "sensorPosition")
+	private Integer idSignal;
+	
+	@Column(name = "signalType")
 	@NotNull
-	private String sensorPosition;
+	private String signalType;
 
-	@Column(name = "sensorType")
-	@NotNull
-	private String sensorType;
-
+	
 }
