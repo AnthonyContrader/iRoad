@@ -72,7 +72,7 @@ public class UserController {
 
 		visualUser(request);
 
-		return "userManager";		
+		return "/User/userManager";		
 
 	}
 

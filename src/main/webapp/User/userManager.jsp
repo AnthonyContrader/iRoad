@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>User Management</title>
 	<%
-		List<UserDTO> listUser = (List<UserDTO>) request.getAttribute("User");
+		List<UserDTO> listUser = (List<UserDTO>) request.getAttribute("user");
 	 %>
 	 
 	<meta charset="utf-8">
@@ -29,7 +29,7 @@
 
     <header class="header dark-bg">
       <div class="toggle-nav">
-        <div class="icon-reorder tooltips" data-original-title="Toggle Navigation" data-placement="bottom"><i class="icon_menu"></i></div>
+       
       </div>
 
       <!--logo start-->
@@ -42,13 +42,13 @@
           <!-- user login dropdown start-->
           <li class="dropdown">
             <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="username">${utenteCollegato}</span>
+                            <span class="username">${utenteCollegato.username}</span>
                             <b class="caret"></b>
                         </a>
             <ul class="dropdown-menu extended logout">
              
               <li>
-                <a href="/User/logout"><i class="icon_key_alt"></i> Log Out</a>
+                <a href="/Admin/logout"><i class="icon_key_alt"></i> Log Out</a>
               </li>
             </ul>
           </li>
@@ -116,15 +116,15 @@
 
 		 				<td><%=user.getPassword()%></td>
 		 				<td><%=user.getUsertype()%></td>
+		 			<td><a  href="/Admin/redirectUpdate?id=<%=user.getIdUser() %>">Edit</a></td>
+		 				<td><a  href="/Admin/deleteUser?id=<%=user.getIdUser() %>">Delete</a></td>
 		 			
-		 				<td><a  href="/Admin/deleteDoctor?id=<%=user.getIdUser() %>">Delete</a></td>
-		 			<td><a  href="/Admin/redirectUpdate?id=<%=user.getIdUser() %>">Delete</a></td>
 		 			</tr>
 						<% 
 							}
 						%>
 				</table>
-				<a  href="/insertUser.jsp/">Insert User</a>
+				<a  href="/User/insertUser.jsp/">Insert User</a>
 				<br>
 				<br>
 				<a  href="/homeAdmin.jsp">Back</a>
@@ -138,45 +138,6 @@
   <!-- container section start -->
 
 
-    <script>
-      //knob
-      $(function() {
-        $(".knob").knob({
-          'draw': function() {
-            $(this.i).val(this.cv + '%')
-          }
-        })
-      });
-      //carousel
-      $(document).ready(function() {
-        $("#owl-slider").owlCarousel({
-          navigation: true,
-          slideSpeed: 300,
-          paginationSpeed: 400,
-          singleItem: true
-        });
-      });
-      //custom select box
-      $(function() {
-        $('select.styled').customSelect();
-      });
-      /* ---------- Map ---------- */
-      $(function() {
-        $('#map').vectorMap({
-          map: 'world_mill_en',
-          series: {
-            regions: [{
-              values: gdpData,
-              scale: ['#000', '#000'],
-              normalizeFunction: 'polynomial'
-            }]
-          },
-          backgroundColor: '#eef3f7',
-          onLabelShow: function(e, el, code) {
-            el.html(el.html() + ' (GDP - ' + gdpData[code] + ')');
-          }
-        });
-      });
-    </script>
+    
 </body>
 </html>

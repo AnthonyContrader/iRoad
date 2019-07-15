@@ -11,30 +11,35 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import it.contrader.dto.UserDTO;
 import it.contrader.services.UserService;
-
+import it.contrader.dto.SensorDTO;
+import it.contrader.services.SensorService;
 @Controller
 @RequestMapping("/Admin")
 public class AdminController {
-
-	private final UserService userService;
-
 	@Autowired
-	public AdminController(UserService userService) {
-		this.userService = userService;
-	}
+	private  UserService userService;
+	@Autowired
+	private  SensorService sensorService;
+
+	
+	
+
 
 	
 	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
 	public String userManagement(HttpServletRequest request) {
+		System.out.print("helooooooooooooooooo");
 		List<UserDTO> allUser = this.userService.getListaUserDTO();
 		request.setAttribute("allUserDTO", allUser);
-		return "userManager";
+		return "/User/userManager";
 
 	}
 	
-	@RequestMapping(value = "/SensorManagement", method = RequestMethod.GET)
-	public String chatManagement(HttpServletRequest request) {
-		return "homesensor";
+	@RequestMapping(value = "/sensorManagement", method = RequestMethod.GET)
+	public String sensorManagement(HttpServletRequest request) {
+		List<SensorDTO> allSensor = this.sensorService.getListaSensorDTO();
+		request.setAttribute("allSensorDTO", allSensor);
+		return "/Sensor/sensorManager";
 
 	}
 
