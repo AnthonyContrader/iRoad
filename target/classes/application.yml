@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    password: root
+    testWhileIdle: true
+    url: jdbc:mysql://localhost:3306/springdb?autoReconnect=true&useSSL=false
+    username: root
+    validationQuery: SELECT 1
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: false
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 100MB
