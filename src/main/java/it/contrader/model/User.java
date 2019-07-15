@@ -32,12 +32,8 @@ public class User {
 	@NotNull
 	private String password;
 
-	@NotNull
-	@Column(name = "ruolo")
-	private String ruolo;
-
 	@Nullable
-	@Column(name = "email")
-	private String email;
+	@Column(name = "usertype")
+	private String usertype;
 
 }

@@ -25,8 +25,8 @@ public class UserService {
 		return ConverterUser.toListDTO((List<User>) userRepository.findAll());
 	}
 
-	public UserDTO getUserDTOById(Integer id) {
-		return ConverterUser.toDTO(userRepository.findById(id).get());
+	public UserDTO getUserDTOById(Integer idUser) {
+		return ConverterUser.toDTO(userRepository.findById(idUser).get());
 	}
 
 	public UserDTO getByUsernameAndPassword(String username, String password) {
@@ -44,8 +44,8 @@ public class UserService {
 		return userRepository.save(ConverterUser.toEntity(userDTO)) != null;
 	}
 	
-	public void deleteUserById(Integer id) {
-		userRepository.deleteById(id);
+	public void deleteUserById(Integer idUser) {
+		userRepository.deleteById(idUser);
 	}
 	
 	public List<UserDTO> findUserDTOByUsername(String username) {

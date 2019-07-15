@@ -33,7 +33,7 @@ public class HomeController {
 	public String userManagement(HttpServletRequest request) {
 		List<UserDTO> allUser = this.userService.getListaUserDTO();
 		request.setAttribute("allUserDTO", allUser);
-		return "homeUser";
+		return "/User/userManager";
 
 	}
 

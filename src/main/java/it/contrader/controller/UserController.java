@@ -35,16 +35,28 @@ public class UserController {
 	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
 	public String userManagement(HttpServletRequest request) {
 		visualUser(request);
-		return "homeUser";		
+		return "/User/userManager";		
 	}
 	
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("id", id);
-		this.userService.deleteUserById(id);
+		int idUser = Integer.parseInt(request.getParameter("idUser"));
+		request.setAttribute("idUser", idUser);
+		this.userService.deleteUserById(idUser);
 		visualUser(request);
-		return "homeUser";
+		return "/User/userManager";
+		
+	}
+	
+	
+	@RequestMapping(value = "/redirectUpdate", method = RequestMethod.GET)
+	public String redirectUpdate(HttpServletRequest request) {
+		int idUser = Integer.parseInt(request.getParameter("idUser"));
+		
+		UserDTO user = userService.getUserDTOById(idUser);
+		
+		request.setAttribute("user", user);
+		return "/User/updateUser";
 		
 	}
 	
@@ -64,7 +76,7 @@ public class UserController {
 		List<UserDTO> allUser = this.userService.findUserDTOByUsername(content);
 		request.setAttribute("allUserDTO", allUser);
 
-		return "homeUser";
+		return "/User/userManager";
 
 	}
 	
@@ -72,14 +84,33 @@ public class UserController {
 	public String insertUser(HttpServletRequest request) {
 		String username = request.getParameter("username").toString();
 		String password = request.getParameter("password").toString();
-		String ruolo = request.getParameter("ruolo").toString();
+		String usertype = request.getParameter("usertype").toString();
+		
 
-		UserDTO userObj = new UserDTO(0, username, password, ruolo,"");
+		UserDTO userObj = new UserDTO(0, username, password, usertype);
 		
 		userService.insertUser(userObj);
 
 		visualUser(request);
-		return "homeUser";
+		return "/User/userManager";
+	}
+	
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(HttpServletRequest request)
+	{
+		int idUser = Integer.parseInt(request.getParameter("idUser"));
+		String usernameUpdate = request.getParameter("username");
+		String passwordUpdate = request.getParameter("password");
+		String usertypeUpdate = request.getParameter("usertype");
+		
+		final UserDTO user = new UserDTO(0, usernameUpdate,passwordUpdate,usertypeUpdate);
+		user.setIdUser(idUser);
+		
+		userService.updateUser(user);
+		List<UserDTO> list = this.userService.getListaUserDTO();
+		request.setAttribute("user", list);
+		return "/User/userManager";	
+		
 	}
 	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -89,12 +120,12 @@ public class UserController {
 		final String username = request.getParameter("username");
 		final String password = request.getParameter("password");
 		final UserDTO userDTO = userService.getByUsernameAndPassword(username, password);
-		final String ruolo = userDTO.getRuolo();
-		if (!StringUtils.isEmpty(ruolo)) {
+		final String usertype = userDTO.getUsertype();
+		if (!StringUtils.isEmpty(usertype)) {
 			session.setAttribute("utenteCollegato", userDTO);
-			if (ruolo.equals("ADMIN")) {
+			if (usertype.equals("ADMIN")) {
 				return "home";
-			} else if (ruolo.equals("CHATMASTER")) {
+			} else if (usertype.equals("USER")) {
 				return "home";
 			}
 		}
