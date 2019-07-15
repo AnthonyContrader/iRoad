@@ -72,7 +72,7 @@ public class UserController {
 
 		visualUser(request);
 
-		return "homeUser";		
+		return "userManager";		
 
 	}
 
@@ -189,16 +189,16 @@ public class UserController {
 
 			if (usertype.equals("ADMIN")) {
 
-				return "home";
+				return "homeAdmin";
 
 			} else if (usertype.equals("USER")) {
 
-				return "home";
+				return "homeUser";
 
 			}
 
 		}
-
+		request.setAttribute("errore", "Wrong username or password");
 		return "index";
 
 	}

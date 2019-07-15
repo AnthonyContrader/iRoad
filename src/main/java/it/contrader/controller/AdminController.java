@@ -13,29 +13,31 @@ import it.contrader.dto.UserDTO;
 import it.contrader.services.UserService;
 
 @Controller
-@RequestMapping("/Home")
-public class HomeController {
+@RequestMapping("/Admin")
+public class AdminController {
 
 	private final UserService userService;
 
 	@Autowired
-	public HomeController(UserService userService) {
+	public AdminController(UserService userService) {
 		this.userService = userService;
 	}
 
-	@RequestMapping(value = "/chatManagement", method = RequestMethod.GET)
-	public String chatManagement(HttpServletRequest request) {
-		return "homeChatbot";
-
-	}
-
+	
 	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
 	public String userManagement(HttpServletRequest request) {
 		List<UserDTO> allUser = this.userService.getListaUserDTO();
 		request.setAttribute("allUserDTO", allUser);
-		return "homeUser";
+		return "userManager";
 
 	}
+	
+	@RequestMapping(value = "/SensorManagement", method = RequestMethod.GET)
+	public String chatManagement(HttpServletRequest request) {
+		return "homesensor";
+
+	}
+
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request) {
@@ -44,7 +46,7 @@ public class HomeController {
 	}
 	@RequestMapping(value = "/indietro", method = RequestMethod.GET)
 	public String indietro(HttpServletRequest request) {
-		return "home";
+		return "homeAdmin";
 
 	}
 }

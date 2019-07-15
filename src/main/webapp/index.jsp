@@ -39,9 +39,7 @@
 					<span class="login100-form-title p-b-70">
 						Welcome In iRoad 
 					</span>
-					<span class="login100-form-avatar">
-						<img src="login/images/logo.png" alt="AVATAR">
-					</span>
+				
                    
 					<div class="wrap-input100 validate-input m-t-85 m-b-35" data-validate = "Enter username">
 					   <input class="input100" type="text" name="username"  placeholder="Username" autofocus>
@@ -54,7 +52,9 @@
 						
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
-
+                    <div>
+						<font color="red">${errore}</font>
+					</div>
 					<div class="container-login100-form-btn">
 					
 			
