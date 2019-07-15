@@ -8,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>User Management</title>
 	<%
-		List<UserDTO> listUser = (List<UserDTO>) request.getAttribute("user");
+	List<UserDTO> AllUser = (List<UserDTO>) request.getAttribute("allUserDTO");
 	 %>
 	 
 	<meta charset="utf-8">
@@ -107,7 +107,7 @@
             	<table class="table table-striped">
 					<tr><th>UserId</th><th>Username</th><th>Password</th><th>Type</th><th colspan=2>Option</th></tr>
 						<%
-							for(UserDTO user: listUser){
+							for(UserDTO user:AllUser){
 						 %>
 		 			<tr>
 		 				<td><%=user.getIdUser()%></td>

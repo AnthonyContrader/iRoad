@@ -23,12 +23,18 @@ public class AdminController {
 
 	
 	
+	private void visualUser(HttpServletRequest request){
 
+		List<UserDTO> allUser = this.userService.getListaUserDTO();
+
+		request.setAttribute("allUserDTO", allUser);
+
+	}
 
 	
 	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
 	public String userManagement(HttpServletRequest request) {
-		System.out.print("helooooooooooooooooo");
+		
 		List<UserDTO> allUser = this.userService.getListaUserDTO();
 		request.setAttribute("allUserDTO", allUser);
 		return "/User/userManager";
@@ -43,6 +49,35 @@ public class AdminController {
 
 	}
 
+	@RequestMapping(value = "/creaUser", method = RequestMethod.POST)
+
+	public String insertUser(HttpServletRequest request) {
+
+		String username = request.getParameter("username").toString();
+
+		String password = request.getParameter("password").toString();
+
+		String usertype = request.getParameter("usertype").toString();
+
+
+
+		UserDTO userObj = new UserDTO(0, username, password, usertype);
+
+		
+
+		userService.insertUser(userObj);
+
+
+
+		visualUser(request);
+
+		return "homeAdmin";
+
+	}
+	
+	
+	
+	
 
 	@RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpServletRequest request) {

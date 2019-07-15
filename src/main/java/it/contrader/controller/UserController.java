@@ -138,6 +138,11 @@ public class UserController {
 
 	
 
+	
+	
+	
+	
+
 	@RequestMapping(value = "/creaUser", method = RequestMethod.POST)
 
 	public String insertUser(HttpServletRequest request) {
@@ -165,42 +170,52 @@ public class UserController {
 	}
 
 	
-
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
-
 	public String loginControl(HttpServletRequest request) {
-
-
-	
 		session = request.getSession();
-
 		final String username = request.getParameter("username");
-
 		final String password = request.getParameter("password");
-
 		final UserDTO userDTO = userService.getByUsernameAndPassword(username, password);
-
-		final String usertype = userDTO.getUsertype();
+		if(userDTO == null) {
+			return "index";
+		}
 		
+		request.setAttribute("userDTO", userDTO);
+		
+		final String usertype = userDTO.getUsertype();
 
-		if (!StringUtils.isEmpty(usertype)) {
-
+		if (usertype!=null) {
 			session.setAttribute("utenteCollegato", userDTO);
 
-			if (usertype.equals("ADMIN")) {
+			switch (usertype) {
+			case "ADMIN":
+				session.setAttribute("utenteCollegato", userDTO);
+				System.out.println(userDTO.getUsertype());
 
 				return "homeAdmin";
 
-			} else if (usertype.equals("USER")) {
+			case "USER":
+				return "homeuser";
 
-				return "homeUser";
-
+			default:
+				
+				return "index";
 			}
 
+		}else {
+			
 		}
-		request.setAttribute("errore", "Wrong username or password");
+		
+		
 		return "index";
+	
 
+	}
+
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logOut(HttpServletRequest request) {
+		request.getSession().invalidate();
+		return "index";
 	}
 
 }

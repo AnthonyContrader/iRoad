@@ -15,7 +15,7 @@
 
 
 <div >
-  <a class="active" href="homeAdmin.jsp">Dashboard</a>
+  <a class="active" href="/homeAdmin.jsp">Dashboard</a>
   <a href="/Admin/userManagement">Users</a>
    <a href="/Admin/vehicleManagement">Vehicles</a>
    <a href="/Admin/sensorManagement">Sensors</a>
