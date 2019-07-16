@@ -7,19 +7,15 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-	
-	
-	
-	
+public class SensorDTO {
 
-	private Integer idUser;
+	private Integer idSensor;
 
-	private String username;
+	private Float longSensor;
 	
-	private String password;
+	private Float latSensor;
 
-	private String usertype;
+	private String sensorType;
 	
 	
 }
