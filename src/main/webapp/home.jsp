@@ -116,12 +116,12 @@
               <a href="#">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
               </a>
-              <ul class="treeview-menu">
+            <ul class="treeview-menu">
                 <li class="active"><a href="/Home/userManagement/"><i class="fa fa-circle-o"></i> User Manager</a></li>
-                 <li class="active"><a href="/Home/userManagement/"><i class="fa fa-circle-o"></i> Vehicle Manager</a></li>
-                  <li class="active"><a href="/Home/userManagement/"><i class="fa fa-circle-o"></i> Sensor Manager</a></li>
-                   <li class="active"><a href="/Home/userManagement/"><i class="fa fa-circle-o"></i> Street Manager</a></li>
-                    <li class="active"><a href="/Home/userManagement/"><i class="fa fa-circle-o"></i> Screen Manager</a></li>
+                 <li class="active"><a href="/Vehicle/vehicleManagement/"><i class="fa fa-circle-o"></i> Vehicle Manager</a></li>
+                  <li class="active"><a href="/Sensor/sensorManagement/"><i class="fa fa-circle-o"></i> Sensor Manager</a></li>
+                   <li class="active"><a href="/Street/streetManagement/"><i class="fa fa-circle-o"></i> Street Manager</a></li>
+                    <li class="active"><a href="/Screen/screenManagement/"><i class="fa fa-circle-o"></i> Screen Manager</a></li>
              
               </ul>
             </li>
@@ -209,6 +209,19 @@
                   <i class="ion ion-pie-graph"></i>
                 </div>
                 <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+              </div>
+            </div><!-- ./col -->
+            <div class="col-lg-3 col-xs-6">
+              <!-- small box -->
+              <div class="small-box bg-red">
+                <div class="inner">
+                  <h3>605</h3>
+                  <p>SCREENS</p>
+                </div>
+                <div class="icon">
+                  <i class="ion ion-pie-graph"></i>
+                </div>
+                <a href="/Screen/screenManagement" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div><!-- ./col -->
           </div><!-- /.row -->
