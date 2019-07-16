@@ -21,6 +21,7 @@
   <div class="row">
         	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         		<form method="POST" action="/Vehicle/update">
+        		<input type="hidden" name="idvehicle" value="<%=v.getIdVehicle()%>" />
 			<input type="hidden" name="namevehicle" value="<%=v.getNameVehicle()%>" />
 			<input type="hidden" name="typevehicle" value="<%=v.getTypeVehicle()%>" />
 			<input type="hidden" name="speedvehicle" value="<%=v.getSpeedVehicle()%>" />
@@ -31,12 +32,12 @@
 
 			<tr>
 				<td><b>NameVehicle:</b></td>
-				<td> <input type="text" size="40" maxlength="40" name="bamevehicle" value="<%=v.getNameVehicle()%>" /></td>
+				<td> <input type="text" size="40" maxlength="40" name="namevehicle" value="<%=v.getNameVehicle()%>" /></td>
 			</tr>
 			
 			<tr>
 				<td><b>TypeVehicle:</b></td> 
-				<td> <input type="typevehicle" size="40" maxlength="40" name="typevehicle" value="<%=v.getTypeVehicle()%>" /></td>
+				<td> <input type="text" size="40" maxlength="40" name="typevehicle" value="<%=v.getTypeVehicle()%>" /></td>
 			</tr>
 			
             <tr>

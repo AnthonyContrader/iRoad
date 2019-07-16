@@ -90,7 +90,7 @@
 		
 		      <p class="form-row-wide">
 		        <label for="reg_weightvehicle">Weight vehicle <span class="required">*</span></label>
-		        <input type="text" class="input-text form-control " name="" id="weightvehicle" placeholder="inserisci weightvehicle" value="" required="">
+		        <input type="text" class="input-text form-control " name="weightvehicle" id="weightvehicle" placeholder="inserisci weightvehicle" value="" required="">
 		      </p>
 		      
 		      <p class="form-row-wide">

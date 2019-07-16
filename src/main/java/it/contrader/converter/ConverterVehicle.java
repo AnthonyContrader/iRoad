@@ -31,9 +31,9 @@ public class ConverterVehicle {
 			vehicle.setNameVehicle(vehicleDTO.getNameVehicle());
 			vehicle.setTypeVehicle(vehicleDTO.getTypeVehicle());
 			vehicle.setSpeedVehicle(vehicleDTO.getSpeedVehicle());
-			vehicle.setWeightVehicle(vehicle.getWeightVehicle());
-			vehicleDTO.setLongVehicle(vehicle.getLongVehicle());
-			vehicleDTO.setLatVehicle(vehicle.getLatVehicle());
+			vehicle.setWeightVehicle(vehicleDTO.getWeightVehicle());
+			vehicle.setLongVehicle(vehicleDTO.getLongVehicle());
+			vehicle.setLatVehicle(vehicleDTO.getLatVehicle());
 			
 		}
 		return vehicle;

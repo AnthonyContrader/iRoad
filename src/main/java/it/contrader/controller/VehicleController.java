@@ -84,15 +84,15 @@ public class VehicleController {
 	
 	@RequestMapping(value = "/creaVehicle", method = RequestMethod.POST)
 	public String insertVehicle(HttpServletRequest request) {
-	    String NameVehicle = request.getParameter("namevehicle").toString();
-		String TypeVehicle = request.getParameter("typevehicle").toString();
-		Float SpeedVehicle = Float.parseFloat(request.getParameter("speedvehicle").toString());
-		Float WeightVehicle = Float.parseFloat(request.getParameter("weightvehicle").toString());
-		Float LongVehicle = Float.parseFloat(request.getParameter("longvehicle").toString());
-		Float LatVehicle = Float.parseFloat(request.getParameter("latvehicle").toString());
+	    String namevehicle = request.getParameter("namevehicle").toString();
+		String typevehicle = request.getParameter("typevehicle").toString();
+		Float speedvehicle = Float.parseFloat(request.getParameter("speedvehicle").toString());
+		Float weightvehicle = Float.parseFloat(request.getParameter("weightvehicle").toString());
+		Float longvehicle = Float.parseFloat(request.getParameter("longvehicle").toString());
+		Float latvehicle = Float.parseFloat(request.getParameter("latvehicle").toString());
 		
 
-		VehicleDTO vehicleObj = new VehicleDTO(0,NameVehicle, TypeVehicle, SpeedVehicle, WeightVehicle, LongVehicle, LatVehicle );
+		VehicleDTO vehicleObj = new VehicleDTO(0,namevehicle, typevehicle, speedvehicle, weightvehicle, longvehicle, latvehicle );
 		
 		
 		vehicleService.insertVehicle(vehicleObj);
@@ -104,7 +104,7 @@ public class VehicleController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public String update(HttpServletRequest request)
 	{
-		int idVehicle = Integer.parseInt(request.getParameter("idVehicle"));
+	Integer idVehicle = Integer.parseInt(request.getParameter("idVehicle"));
 		String namevehicleUpdate = request.getParameter("namevehicle");
 		String typevehicleUpdate = request.getParameter("typevehicle");
 		Float speedvehicleUpdate = Float.parseFloat (request.getParameter("speedvehicle"));
