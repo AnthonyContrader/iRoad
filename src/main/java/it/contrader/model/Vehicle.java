@@ -1,11 +1,11 @@
 package it.contrader.model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,21 +14,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class Vehicle {
 	
-	public enum Usertype {
-		ADMIN,
-		USER
+	public enum Vehicletype {
+		Autoveicolo,
+		Autocarro,
+		Motoveicolo,
+		Velocipede
 	}
-
+	
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	
+	private long idVehicle;
 	@Column(unique = true)
-	private String username;
-	private String password;
-	private Usertype usertype;
-	
-	
+	private Vehicletype vehicletype;
+	private String nameVehicle;
+	private Float speedVehicle;
+	private Float weightVehicle;
+	private Float longVehicle;
+	private Float latVehicle;
 }

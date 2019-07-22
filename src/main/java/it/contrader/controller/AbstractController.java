@@ -11,18 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.service.ServiceDTO;
 
-/**
- * In questa classe sono implementati tutti i metodi di CRUD dei Controller, paramentrizzati dal tipo
- * generico. Nella classe viene dichiarata l'interfaccia ServiceDTO<DTO>.
- * 
- * @author Vittorio Valent & Girolamo Murdaca
- *
- *@param <DTO>
- *
-
- * 
- * @see ServiceDTO<DTO>
- */
 public abstract class AbstractController <DTO>{
 
 	@Autowired

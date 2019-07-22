@@ -11,19 +11,6 @@ import it.contrader.dto.LoginDTO;
 import it.contrader.dto.UserDTO;
 import it.contrader.service.UserService;
 
-
-/**
- * 
- * Questa classe estende AbstractController con tipo UserDTO.
- * In aggiunta ai metodi di CRUD si implementa il metodo di login.
- * 
- * @author Vittorio Valent & Girolamo Murdaca
- * 
- * @param<UserDTO>
- * 
- * @see AbstractController
- *
- */
 @RestController
 @RequestMapping("/user")
 @CrossOrigin(origins = "http://localhost:4200")
