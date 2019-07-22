@@ -22,7 +22,7 @@ public class VehicleConverter extends AbstractConverter<Vehicle,VehicleDTO> {
 	public VehicleDTO toDTO(Vehicle vehicle) {
 		VehicleDTO vehicleDTO = null;
 		if (vehicle != null) {
-			vehicleDTO = new VehicleDTO(vehicleDTO.getIdVehicle(),vehicleDTO.getVehicletype(),vehicleDTO.getNameVehicle(),vehicleDTO.getLatVehicle(),vehicleDTO.getLongVehicle(),vehicleDTO.getSpeedVehicle(),vehicleDTO.getWeightVehicle());
+			vehicleDTO = new VehicleDTO(vehicle.getIdVehicle(),vehicle.getVehicletype(),vehicle.getNameVehicle(),vehicle.getLatVehicle(),vehicle.getLongVehicle(),vehicle.getSpeedVehicle(),vehicle.getWeightVehicle());
 		
 		}
 		return vehicleDTO;
