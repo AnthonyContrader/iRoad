@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AbstractService } from './abstractservice';
-import { UserDTO } from 'src/dto/userdto';
+import { VehicleDTO } from 'src/dto/vehicledto';
 import { HttpClient } from '@angular/common/http';
 import { LoginDTO } from 'src/dto/logindto';
 import { Observable } from 'rxjs';
@@ -8,15 +8,10 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService extends AbstractService<UserDTO>{
+export class VehicleService extends AbstractService<VehicleDTO>{
 
   constructor(http: HttpClient) {
     super(http);
-    this.type = 'user';
+    this.type = 'vehicle';
   }
-
-  login(loginDTO: LoginDTO): Observable<UserDTO> {
-    return this.http.post<any>('http://localhost:8080/' + this.type + '/login', loginDTO)
-  }
-
 }
