@@ -13,5 +13,6 @@ export class VehicleService extends AbstractService<VehicleDTO>{
   constructor(http: HttpClient) {
     super(http);
     this.type = 'vehicle';
+    this.port = '8080'
   }
 }
