@@ -35,7 +35,7 @@ public class Street {
 	
 	
 	@ManyToOne
-	@JoinColumn(name="Sennor_id")
+	@JoinColumn(name="Sensor_id")
 	private Sensor sensor;
 	
 }
