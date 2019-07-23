@@ -34,4 +34,10 @@ public class Vehicle {
 	private Float weightVehicle;
 	private Float longVehicle;
 	private Float latVehicle;
+	
+	@OneToOne
+	@JoinColumn(name="id")
+	private User user;
+
 }
+

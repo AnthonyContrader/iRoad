@@ -3,6 +3,7 @@ package it.contrader.dto;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+
 import it.contrader.model.Vehicle.Vehicletype;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,4 +21,5 @@ public class VehicleDTO {
 	private Float weightVehicle;
 	private Float longVehicle;
 	private Float latVehicle;
+	private UserDTO  userDTO;
 }
