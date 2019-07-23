@@ -12,6 +12,10 @@ export class AdminMenuComponent implements OnInit {
   isVehicleCollapsed = false;
   isClientCollapsed = false;
   isAccountCollapsed = false;
+  isStreetCollapsed = false; 
+  isSensorCollapsed = false;
+  isSignaleCollapsed = false;
+  isScreenCollapsed = false;
 
   constructor(private router: Router) {
   }
@@ -34,7 +38,26 @@ export class AdminMenuComponent implements OnInit {
       this.isVehicleCollapsed = true;
     } else { this.isVehicleCollapsed = false; }
   }
-
+  streetscollapse() {
+    if (this.isStreetCollapsed === false) {
+      this.isStreetCollapsed = true;
+    } else { this.isStreetCollapsed = false; }
+  }
+  sensorscollapse() {
+    if (this.isSensorCollapsed === false) {
+      this.isSensorCollapsed = true;
+    } else { this.isSensorCollapsed = false; }
+  }
+  signalescollapse() {
+    if (this.isSignaleCollapsed === false) {
+      this.isSignaleCollapsed = true;
+    } else { this.isSignaleCollapsed = false; }
+  }
+  screenscollapse() {
+    if (this.isScreenCollapsed === false) {
+      this.isScreenCollapsed = true;
+    } else { this.isScreenCollapsed = false; }
+  }
   accountcollapse() {
     if (this.isAccountCollapsed === false) {
       this.isAccountCollapsed = true;

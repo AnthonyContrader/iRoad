@@ -6,17 +6,12 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-
-/**
- * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
- * l'admin. Questo modulo importa AdminRoutingModule.
- * 
- * @author Vittorio Valent
- * 
- * @see AdminRoutingModule
- */
+import { SignalesComponent } from './signales/signales.component';
+import { SensorsComponent } from './sensors/sensors.component';
+import { StreetsComponent } from './streets/streets.component';
+import { ScreensComponent } from './screens/screens.component';
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, VehiclesComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, VehiclesComponent,SignalesComponent,StreetsComponent,SensorsComponent,ScreensComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
