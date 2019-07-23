@@ -1,4 +1,5 @@
 import {Vehicletype} from './vehicletype';
+import { UserDTO } from './userdto';
 
 
 export class VehicleDTO {
@@ -16,6 +17,8 @@ export class VehicleDTO {
    longVehicle: number;
 
    latVehicle: number;
+
+   userDTO : UserDTO;
 
    
 

@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginDTO: LoginDTO;
+  isLoginCollapsed = false;
+  isSignuptCollapsed = false;
 
   constructor(private service: UserService, private router: Router) { }
 
@@ -41,4 +43,16 @@ export class LoginComponent implements OnInit {
       }
     });
   }
+  logincollapse() {
+    if (this.isLoginCollapsed === false) {
+      this.isLoginCollapsed = true;
+    } else { this.isLoginCollapsed = false; }
+  }
+
+  signupcollapse() {
+    if (this.isSignuptCollapsed === false) {
+      this.isSignuptCollapsed = true;
+    } else { this.isSignuptCollapsed = false; }
+  }
+
 }
